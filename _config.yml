@@ -1,0 +1,4 @@
+---
+title: Calamity Lane
+permalink: /:categories/:title
+exclude: README.md

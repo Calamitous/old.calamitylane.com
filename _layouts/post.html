@@ -9,6 +9,10 @@ layout: default
     <div class="date">{{ page.date | date: "%B %d, %Y" }}</div>
   </div>
   <div class="content">
+    {% if page.image %}
+    <img alt="{{ page.image_alt }}" class="picA floatleft" src="{{ page.image }}" />
+    {% endif %}
+
     {{ content }}
   </div>
   <div class="footer">

@@ -2,10 +2,10 @@
 title: A More Effective Name
 layout: post
 category: programming
+image: "/images/private_sign.png"
+image_alt: "Back Off."
 published: true
 ---
-<img alt="Back Off." class="picA floatleft" src="/images/private_sign.png" />
-
 A quick note:
 
 If you are:

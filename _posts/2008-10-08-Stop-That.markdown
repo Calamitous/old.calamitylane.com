@@ -1,0 +1,13 @@
+---
+title: Stop That
+layout: post
+category: programming
+published: true
+---
+I'm compelled to highlight a gem I found in our codebase the other day. If you ever find yourself writing something like: 
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="ident">variable</span> <span class="punct">==</span> <span class="ident">value</span> <span class="punct">?</span> <span class="constant">true</span> <span class="punct">:</span> <span class="constant">false</span>
+</code></pre></div>
+
+...go sit in the corner and think about what you did wrong.
+

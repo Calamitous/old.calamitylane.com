@@ -4,7 +4,6 @@ layout: post
 category: programming
 published: true
 ---
-
 So for anyone out there who is not already insanely jealous of my good looks and/or impeccable fashion sense, you should know I was one of the recipients of a CR-48 netbook in Google's free giveaway.
 
 A full review is forthcoming (sneak preview: it is awesome), but here I just wanted to share a couple quick things I found that turn ChromeOS from an interesting toy to a usable developer's tool.

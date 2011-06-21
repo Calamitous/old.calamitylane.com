@@ -4,7 +4,6 @@ layout: post
 category: programming
 published: true
 ---
-
 <img alt="Shhhhh." class="picA floatleft" src="/images/no_beeping.png">
 
 A quickie to remind myself next time I build an Ubuntu box, and am being slowly driven batty by a tiny, tinny obsolete PC speaker made of hate:

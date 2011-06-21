@@ -4,7 +4,6 @@ layout: post
 category: programming
 published: true
 ---
-
 <img alt="Back Off." class="picA floatleft" src="/images/private_sign.png" />
 
 A quick note:

@@ -2,6 +2,8 @@
 title: "Chrome OS on the CR-48: It Has Developer Bits!"
 layout: post
 category: programming
+image: "/images/post_icons/chrome_logo.png"
+image_alt: "Delicious crunchy bits, like bacon which has been slightly burned."
 published: true
 ---
 So for anyone out there who is not already insanely jealous of my good looks and/or impeccable fashion sense, you should know I was one of the recipients of a CR-48 netbook in Google's free giveaway.

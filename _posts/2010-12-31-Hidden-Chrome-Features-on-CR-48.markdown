@@ -2,6 +2,8 @@
 title: Hidden Chrome Features on CR-48
 layout: post
 category: programming
+image: "/images/post_icons/chrome_logo.png"
+image_alt: "Shiny!"
 published: true
 ---
 After having playing around with ChromeOS on the CR-48 netbook ([which I've blogged about before](http://calamitylane.com/articles/programming/chrome-os-on-the-cr-48-it-has-developer-bits)), I've found a few more interesting tidbits that let you dig deeper into the system.

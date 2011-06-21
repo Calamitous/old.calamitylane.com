@@ -2,7 +2,7 @@
 title: Annihilate Ubuntu's Annoying System Beep
 layout: post
 category: programming
-image: "/images/no_beeping.png"
+image: "/images/post_icons/no_beeping.png"
 image_alt: "Shhhhh."
 published: true
 ---

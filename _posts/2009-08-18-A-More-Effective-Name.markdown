@@ -2,7 +2,7 @@
 title: A More Effective Name
 layout: post
 category: programming
-image: "/images/private_sign.png"
+image: "/images/post_icons/private_sign.png"
 image_alt: "Back Off."
 published: true
 ---

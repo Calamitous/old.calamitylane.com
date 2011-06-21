@@ -1,0 +1,2 @@
+rvm_install_on_use=1
+rvm use 1.9.2@calamitylane

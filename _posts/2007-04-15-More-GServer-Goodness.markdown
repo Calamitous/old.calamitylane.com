@@ -8,7 +8,7 @@ In a [previous posting](/articles/programming/rails-telnet-server), I demonstrat
 
 #### ACCESSING YOUR SERVER REMOTELY
 
---- break here ---
+<!-- read more -->
 
 This one took way too long to figure out.  Every example I've seen online ([even the library documentation](http://www.ruby-doc.org/stdlib/libdoc/gserver/rdoc/index.html)) will only let you connect from localhost, which seemed even more exceptionally pointless than the stuff I usually do.  Most of the sample code runs along these lines:
 

@@ -10,7 +10,7 @@ So, yeah, this is going to be a little ranty; feel free to skip it if you like B
 
 I'm not going into the many reasons I decided to close out my Bank of America account, just the representative experience of actually doing it.
 
---- break here ---
+<!-- read more -->
 So I rolled in, got to a teller, and told her I wanted to close my account.  She directed me to the back of the bank, since tellers can't close accounts.
 
 Okay, fine.  I'm not going to get into asking why I can't just close my account through their horrible, horrible website, but fine.

@@ -21,7 +21,7 @@ published: true
 <span class="punct">([</span><span class="ident">karma</span><span class="punct">]</span> <span class="punct">*</span> <span class="number">5</span><span class="punct">).</span><span class="ident">map</span><span class="punct">(&amp;</span><span class="symbol">:chameleon</span><span class="punct">)</span>
 </code></pre></div>
 
---- break here ---
+<!-- read more -->
 
 Karma Chameleon, by Culture Club
 

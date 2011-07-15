@@ -55,7 +55,7 @@ I love these things.  They're all filler and no meat, like marshmallow sandwiche
 
 Answer after the jump.
 
---- break here ---
+<!-- read more -->
 
 Welcome to the Jungle -- Guns 'n' Roses
 

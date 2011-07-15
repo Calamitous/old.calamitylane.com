@@ -16,7 +16,7 @@ Osake reminded me this morning that I hadn't posted this one up yet...
 <span class="keyword">end</span>
 </code></pre></div>
 
---- break here ---
+<!-- read more -->
 
 Escape (The Pina Colada Song) -- Rupert Holmes
 

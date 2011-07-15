@@ -6,7 +6,7 @@ published: true
 ---
 In my ongoing travails with Merb & Friends, I've run across a few behaviors with the select() form helper method.  Since there's currently a dearth of examples, I thought I'd document them for myself and future googlers.
 
---- break here ---
+<!-- read more -->
 
 If you're having problems getting select() to work in Merb, bear the following in mind:
 

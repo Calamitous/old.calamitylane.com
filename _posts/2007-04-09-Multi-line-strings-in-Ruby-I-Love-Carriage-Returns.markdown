@@ -12,7 +12,7 @@ If you've ever done any serious development in VB or the old VBScript, you've pr
              "ON o.person_id = p.id " & _
              "WHERE person_id = " & PersonID & ";"
 
---- break here ---
+<!-- read more -->
 
 ...which is highly readable, but a huge pain to debug, especially when trying to cut-n-paste into the query window. How many of us have learned BkSp-BkSp-BkSp-Down-End-repeat-ad-infinitum? In fact, if you were to take every '" & \_' and ' "' I've ever deleted and stack them up on top of one another, you would probably end up with a stack... well, several inches high. Let's face it, electrons just aren't that big.
 

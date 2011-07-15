@@ -15,7 +15,7 @@ After having playing around with ChromeOS on the CR-48 netbook ([which I've blog
 * Wi-Fi Troubleshooting: about:network
 * Manage Extensions and Apps: chrome://extensions
 
---- break here ---
+<!-- read more -->
 
 ## Experimental Features/Flash Drives:
 

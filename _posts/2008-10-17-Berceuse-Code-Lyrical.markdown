@@ -71,7 +71,7 @@ Somewhat in the same vein as our last one:
 <span class="keyword">end</span>
 </code></pre></div>
 
---- break here ---
+<!-- read more -->
 
 Enter the Sandman by Metallica
 

@@ -13,7 +13,7 @@ You can't rewrite a failed project with new technology or software and expect it
 Programmers aren't (generally) dumb, but managing programmers involves balancing a variety of broken personalities.
 
 
---- break here ---
+<!-- read more -->
 
 * Don't add contractors to a late project
 

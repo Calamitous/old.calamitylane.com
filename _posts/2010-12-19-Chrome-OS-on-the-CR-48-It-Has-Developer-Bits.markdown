@@ -15,7 +15,7 @@ A full review is forthcoming (sneak preview: it is awesome), but here I just wan
 * Shell/SSH Client: Ctrl-Alt-t
 * Developer Tools: Ctrl-Shift-i
 
---- break here ---
+<!-- read more -->
 
 ## Process Manager/Task Manager:
 

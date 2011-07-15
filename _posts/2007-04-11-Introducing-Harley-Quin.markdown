@@ -8,7 +8,7 @@ Well, we finally got a new pet!
 
 It took us a while to get past the grief of Nanako's passing, but we finally felt ready to get another kitty.  We searched petfinder.com and made a list of about 20 cats who were just unbelievably cute!  Then, we ran into problems.  We couldn't possibly have 20 cats!  All we needed was one, maybe two!  So, we tried to cull.  But really, how can you cull out the cutest little pair of kitty eyes in the whole world?  Much less 20 pairs?!
 
---- break here ---
+<!-- read more -->
 
 It just wasn't working.  We had too many options!  So, to limit ourselves, we decided to head on down to the Petco on a Saturday afternoon to check out the kitties they had for adoption.  Surely that would make everything easier!  We'd only have 10 pair of cute little kitty eyes to decide from!  Not to mention kitty paws and tails and meows and purrs...oh, dear!
 

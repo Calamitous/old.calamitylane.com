@@ -7,9 +7,10 @@
 body
 {
   background: #F9F9F7 url('../images/a1.gif') repeat-x;
-  font-size: 11px;
+  font-size: 11.5px;
   font-family: "trebuchet ms", helvetica, sans-serif;
-  color: #8C8C73;
+  /* color: #8C8C73; */
+  color: #808060;
   line-height: 18px;
 }
 
@@ -264,10 +265,14 @@ ul.linklist li.first
   margin-bottom: 0px;
 }
 
+#primarycontent .post ul
+{
+  margin-left: 25px;
+}
+
 #primarycontent .post .footer
 {
   position: relative;
-  top: -10px;
   background: url('../images/a33.gif') repeat-x;
   height: 64px;
 }
@@ -275,9 +280,6 @@ ul.linklist li.first
 #primarycontent .post .footer ul
 {
   list-style: none;
-  /* position: absolute;
-  right: 15px;
-  bottom: 15px; */
   position: relative;
   bottom: -32px;
   right: 15px;
@@ -361,5 +363,3 @@ ul.linklist li.first
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-
-

@@ -1,6 +1,6 @@
 Script to list/open all unpublished posts
 Add disqus comments
-limit list of posts on front page
+paginate posts on front page
 Add google analytics
 check syntax highlighting
-site styling is all screwed up
+Finish out ancillary pages (about, contact, etc.)

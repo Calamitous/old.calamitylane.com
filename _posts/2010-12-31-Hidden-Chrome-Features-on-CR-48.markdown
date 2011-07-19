@@ -8,7 +8,7 @@ published: true
 ---
 After having playing around with ChromeOS on the CR-48 netbook ([which I've blogged about before](http://calamitylane.com/articles/programming/chrome-os-on-the-cr-48-it-has-developer-bits)), I've found a few more interesting tidbits that let you dig deeper into the system.
 
-<br /><br />
+<br /><br /><br />
 ## tl;dr
 * Experimental Features/Flash Drives: chrome://flags
 * Nicer View of Memory Usage: about:memory

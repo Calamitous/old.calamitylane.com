@@ -2,8 +2,8 @@ Script to list/open all unpublished posts
 Add disqus comments
 Add google analytics
 check syntax highlighting
-Finish out ancillary pages (about, contact, etc.)
+Finish out ancillary pages (about, contact, links, archive)
 nginx is not starting on boot :P
 fix url and formatting, and extra "next" link for paginator
 add sitemap.xml?
-generate rss feeds
+sidebar formatting is now screwy

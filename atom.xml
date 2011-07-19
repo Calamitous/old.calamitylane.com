@@ -3,25 +3,25 @@ layout: nil
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
+
  <title>Calamity Lane</title>
- <link href="http://Calamitous.github.com/calamitylane.com/atom.xml" rel="self"/>
- <link href="http://Calamitous.github.com/calamitylane.com/"/>
+ <link href="http://calamitylane.com/atom.xml" rel="self"/>
+ <link href="http://calamitylane.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://Calamitous.github.com/calamitylane.com/</id>
+ <id>http://calamitylane.com</id>
  <author>
-   <name>Dr Nic Williams</name>
-   <email>Calamitouswilliams@gmail.com</email>
+   <name>Eric Budd</name>
+   <email>eric.b.budd@gmail.com</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://Calamitous.github.com/calamitylane.com{{ post.url }}"/>
+   <link href="http://calamitylane.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://Calamitous.github.com/calamitylane.com{{ post.id }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <id>http://calamitylane.com{{ post.id }}</id>
+   <content type="html">{{ post.excerpt | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
+
 </feed>

@@ -19,9 +19,9 @@
         <div id="menu">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/">Archives</a></li>
-            <li><a href="/">Links</a></li>
-            <li><a href="/">Contact</a></li>
+            <li><a href="/archive.html">Archive</a></li>
+            <li><a href="/links.html">Links</a></li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
         <div id="primarycontent">
@@ -31,15 +31,16 @@
           <h3>About Us</h3>
           <div class="content">
             <p>
-            <strong>He's</strong> a high technologist from the Deep South.&nbsp;&nbsp;<strong>She's</strong> a globe-trotting industrial hygienist.&nbsp;&nbsp;<strong>Together</strong> they form-- The Calamiteam!&nbsp;&nbsp;<a href="/">More...</a>
+            <strong>He's</strong> a high technologist from the Deep South.&nbsp;&nbsp;<strong>She's</strong> a globe-trotting industrial hygienist.&nbsp;&nbsp;<strong>Together</strong> they form-- The Calamiteam!&nbsp;&nbsp;<a href="/about.html">More...</a>
             </p>
           </div>
           <h3>Contact</h3>
           <div class="content">
             <ul class="linklist">
               <li class="first"><h4>Email</h4>eric.b.budd *at* gmail.com</li>
-              <li><h4>Github</h4>Calamitous</li>
-              <li><h4>Twitter</h4>@clam_tea</li>
+              <li><h4>Github</h4><a href="http://github.com/Calamitous">Calamitous</a></li>
+              <li><h4>Twitter</h4><a href="http://twitter.com/clam_tea">@clam_tea</a></li>
+              <li><h4>Google+</h4><a href="http://gplus.to/calamitous">Eric Budd</a></li>
             </ul>
           </div>
           <h3>Other Worthies</h3>
@@ -61,16 +62,17 @@
             <h3>Blog Posts</h3>
             <p>
             <ul class="linklist">
-              {% for post in site.posts %} 
+              {% for post in paginator.posts %} 
                 <li><a href="{{ post.url }}">{{ post.title }}</a></li>
               {% endfor %}
+              <li><a href="/archive.html"><strong>...and a bunch more</strong></a></li>
             </ul>
             </p>
           </div>
           <h3>Syndicate</h3>
           <div class="content">
             <p>
-            <a href="/">RSS</a>
+            <a href="/atom.xml">RSS</a>
             </p>
           </div>
         </div>

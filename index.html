@@ -17,12 +17,15 @@ title: Calamity Lane
 </div>
 <div class="footer">
   <ul>
-    <li class="printerfriendly">
-      <a href="/">Printer Friendly</a>
-    </li>
     <li class="comments">
       <a href="{{ post.url }}#comments">2 Comments</a>
     </li>
+
+    {% if post.excerpt != post.content %}
+      <li class="readmore">
+        <a href="{{ post.url }}">Read More</a>
+      </li>
+    {% endif %}
   </ul>
 </div>
 </div>

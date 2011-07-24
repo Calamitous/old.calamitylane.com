@@ -29,12 +29,15 @@ title: Calamity Lane
 {% endfor %}
 
 <div class="pagination">
-  {{ if paginator.previous_page }}
-
-  div class="older"><a href="/page{{ paginator.next_page }}">&lt; Older Entries</a></div>
-  {{ endif }}
+  {% if paginator.next_page %}
+    <span class="older"><a href="/page{{ paginator.next_page }}">&lt; Older Entries</a></span>
+  {% endif %}
   <span class="page_number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {{ if paginator.next_page }}
-  <div class="newer"><a href="/page{{ paginator.previous_page }}">Newer Entries &gt;</a></div>
-  {{ endif }}
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <span class="newer"><a href="/">Current Entries &gt;</a></span>
+    {% else %}
+      <span class="newer"><a href="/page{{ paginator.previous_page }}">Newer Entries &gt;</a></span>
+    {% endif %}
+  {% endif %}
 </div>

@@ -6,7 +6,7 @@ title: Calamity Lane
 <div class="post">
 <div class="header">
   <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-  <div class="date">{{ post.date | date_to_string }}</div>
+  <div class="date">{{ post.date | date: "%B %d, %Y" }}</div>
 </div>
 <div class="content">
 {% if post.image %}

@@ -1,9 +1,10 @@
 Script to list/open all unpublished posts
 Add google analytics
-check syntax highlighting
 Finish out ancillary pages (about, contact, links, archive)
+check syntax highlighting
+fix code sample formatting
 nginx is not starting on boot :P
-fix url and formatting, and extra "next" link for paginator
+fix url and formatting for paginator
 add sitemap.xml?
 change format of page urls from "/page1" to "/page/1"?
 Import comments

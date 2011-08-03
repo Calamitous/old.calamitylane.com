@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Calamity Lane</title>
+  <meta name="author" content="Eric Budd">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://calamitylane.com/page7/index.html"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Calamity Lane" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Calamity Lane</a></h1>
+  
+    <h2>Curious Code for Curious Coders</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:calamitylane.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/More-GServer-Goodness/">More GServer Goodness</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-15 00:00:00 -0500" pubdate  updated >Apr 15<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In a <a href="/articles/programming/rails-telnet-server">previous posting</a>, I demonstrated how to create a telnet server from a Rails application.  After having actually used GServer in anger, I can add a few notes to it:</p>
+
+<h4>ACCESSING YOUR SERVER REMOTELY</h4>
+
+<!-- read more -->
+
+
+<p>This one took way too long to figure out.  Every example I&#8217;ve seen online (<a href="http://www.ruby-doc.org/stdlib/libdoc/gserver/rdoc/index.html">even the library documentation</a>) will only let you connect from localhost, which seemed even more exceptionally pointless than the stuff I usually do.  Most of the sample code runs along these lines:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1
+2
+3
+4
+5
+6
+7
+8
+9</code><code><span class="ident">require</span> <span class="punct">'</span><span class="string">gserver</span><span class="punct">'</span>
+
+<span class="keyword">class </span><span class="class">SomeNewServer</span> <span class="punct">&lt;</span> <span class="constant">GServer</span>
+&nbsp;&nbsp;<span class="punct">...</span>
+<span class="keyword">end</span>
+
+<span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+<span class="ident">server</span><span class="punct">.</span><span class="ident">start</span>
+<span class="ident">server</span><span class="punct">.</span><span class="ident">join</span>
+</code></pre></div>
+
+
+<p>&#8230;where &#8220;1234&#8221; is the port used to access the server.  With this setup, you simply cannot access the server from another box, period.  Change the following line:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+</code></pre></div>
+
+
+<p>&#8230;to:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span><span class="punct">,</span> <span class="punct">'</span><span class="string">myserver.example.com</span><span class="punct">'</span>
+</code></pre></div>
+
+
+<p>&#8230;to make your new server accessible to the outside world.  You can use an IP address in place of the domain name.</p>
+
+<p>On the one hand, I was able to just guess at this parameter, and Ruby&#8217;s Principle of Least Surprise came through for me.  It&#8217;s more secure, as you don&#8217;t have to worry about accidentally exposing a massive security hole on your box during development.   On the other hand, it would have been nice to have it clearly listed out somewhere.  Here&#8217;s hoping that this saves some future googler a guessing game.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/More-GServer-Goodness/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Introducing-Harley-Quin/">Introducing Harley Quin</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-11 00:00:00 -0500" pubdate  updated >Apr 11<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Well, we finally got a new pet!</p>
+
+<p>It took us a while to get past the grief of Nanako&#8217;s passing, but we finally felt ready to get another kitty.  We searched petfinder.com and made a list of about 20 cats who were just unbelievably cute!  Then, we ran into problems.  We couldn&#8217;t possibly have 20 cats!  All we needed was one, maybe two!  So, we tried to cull.  But really, how can you cull out the cutest little pair of kitty eyes in the whole world?  Much less 20 pairs?!</p>
+
+<!-- read more -->
+
+
+<p>It just wasn&#8217;t working.  We had too many options!  So, to limit ourselves, we decided to head on down to the Petco on a Saturday afternoon to check out the kitties they had for adoption.  Surely that would make everything easier!  We&#8217;d only have 10 pair of cute little kitty eyes to decide from!  Not to mention kitty paws and tails and meows and purrs&#8230;oh, dear!</p>
+
+<p>Full of excitement, we drove out, walked through the store to the adoption area, looked inside&#8230;and saw dogs.  Not cuddly little kitties&#8230;.yipping puppies!  We were a bit disappointed, but I wanted to get some petting action in while we were there.  I love to cuddle animals!</p>
+
+<p>Perhaps we were in trouble from that moment.  The first couple of dogs were a bit hyper.  They were all jumping tongues and squirms of excitement.  They were cute, don&#8217;t get me wrong, but we wanted a kitty.  We were just in there to pet!</p>
+
+<p>The next dog in line was a big black lab mix who did NOT like men.  Eric couldn&#8217;t get close.  The poor puppy!  I mean, what could have been done to the poor baby to make him just hate and fear men like that?!</p>
+
+<p>Next one was a black and white dog who was laying there sleeping.  I bent down to pet him, and he only looked up at me with these tired friendly eyes and lay right back down.  He had the most amazing coat!  All soft and thick.  He was a cutie!  Apparently, he had been playing with the beagle puppy being kept next to him and had been plumb wore out!  They told us his name was Jester.</p>
+
+<p>We moved on to the remaing two dogs (the beagle next to Jester was in the process of being adopted) and left the adoption area.  But I just couldn&#8217;t get Jester&#8217;s awesome coat and laid-back attitude out of my head.  He had been awesome!  And the more I thought about him, the more I wanted to bring him home.</p>
+
+<p>I admit it&#8230;I bottom-lipped and sad-eyed Eric into getting him. LOL  Of course, we still had to get through the adoption process.</p>
+
+<p>We had attempted to adopt from the Humane Society once before and were turned down rather rudely.  They claimed there was too much &#8220;in and out&#8221; of animals for their liking.  They based their decision on the information we listed in one particular section of the application.  In this section, we were asked to list the animals we had owned in the previous 10 years, so to establish ourselves as experienced, qualified pet owners, I listed 4 animals:</p>
+
+<ul>
+<li>My cat Whiteface who died of old age at 13 years</li>
+<li>Mom&#8217;s cat Son who died at the age of 11 after being attacked by coons who got into the yard</li>
+<li>Kitty Kat, my mom&#8217;s dog who died at 8 or 9 quite suddenly (we never really knew what happened to him)</li>
+<li>Eric&#8217;s cat Ichabod who had to be given back to his original owner when he moved</li>
+</ul>
+
+
+<p>I really don&#8217;t understand how that qualifies as too much &#8220;in and out&#8221; of animals.  We were very upset and the memory made us anxious about this adoption process through the Friends of Parkville Animal Shelter.</p>
+
+<p>If anyone would like to adopt an animal, PLEASE go through FOPAS!  They obviously love the animals they care for!  We were so very impressed with how efficient and nice everyone there was!  The adoption process, though not a breeze of course, was so refreshingly well-handled!  They were inquisitive without being prying.  They were concerned without being condescending.  I truly urge anyone in the Kansas City area to adopt from them!  We&#8217;re thinking of getting a kitty next (after summer classes with Harley), and we&#8217;ll definitely be getting our kitty from them!</p>
+
+<p>So, we now have a very cute dog who we renamed Harley Quin.</p>
+
+<h3>Next exciting episode:</h3>
+
+<h2>HOW CAN ONE DOG STINK SOOO BAD AND STILL BE SOOO CUTE?!</h2>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Introducing-Harley-Quin/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Multi-line-strings-in-Ruby-I-Love-Carriage-Returns/">Multi-line Strings in Ruby&#8211; I Love Carriage Returns!</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-09 00:00:00 -0500" pubdate  updated >Apr 9<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you&#8217;ve ever done any serious development in VB or the old VBScript, you&#8217;ve probably done something like this:</p>
+
+<pre><code>strSQL = "SELECT o.* " &amp; _
+         "FROM people p " &amp; _
+         "INNER JOIN orders o " &amp; _
+         "ON o.person_id = p.id " &amp; _
+         "WHERE person_id = " &amp; PersonID &amp; ";"
+</code></pre>
+
+<!-- read more -->
+
+
+<p>&#8230;which is highly readable, but a huge pain to debug, especially when trying to cut-n-paste into the query window. How many of us have learned BkSp-BkSp-BkSp-Down-End-repeat-ad-infinitum? In fact, if you were to take every &#8216;&#8221; &amp; _&#8217; and &#8217; &#8220;&#8217; I&#8217;ve ever deleted and stack them up on top of one another, you would probably end up with a stack&#8230; well, several inches high. Let&#8217;s face it, electrons just aren&#8217;t that big.</p>
+
+<p>Fed up with this state of affairs, many of us moved to C# for development, leading to:</p>
+
+<pre><code>strSQL =          "SELECT o.* ";
+strSQL = strSQL + "FROM people p ";
+strSQL = strSQL + "INNER JOIN orders o ";
+strSQL = strSQL + "  ON o.person_id = p.id ";
+strSQL = strSQL + "WHERE person_id = " + PersonID.ToString() + ";
+</code></pre>
+
+<p>In the computer industry, this is called &#8220;progress.&#8221;</p>
+
+<p>Of course, if you wanted to make debugging simpler, you could stuff the entire string on one line:</p>
+
+<pre><code>strSQL = "SELECT o.* FROM people p INNER JOIN orders o ON o.person_id = p.id WHERE person_id = " + PersonID.ToString() + ";"
+</code></pre>
+
+<p>&#8230;which is a lot easier to cut-n-paste, but a lot less easy to read.</p>
+
+<p>Which is where Ruby comes in. Same query in Ruby:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1
+2
+3
+4
+5
+6</code><code><span class="ident">strSQL</span> <span class="punct">=</span> <span class="punct">&quot;</span><span class="string">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SELECT o.*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM people p
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNER JOIN orders o ON o.person_id = p.id
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE person_id = <span class="expr">#{person_id.to_s}</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punct">&quot;</span>
+</code></pre></div>
+
+
+<p>Isn&#8217;t it bee-yoo-tee-ful? Readable, functional, and oh so copy-pasteable. Also, it does not require extra punctuation to patch together a simple multi-line query.</p>
+
+<p>There are about 19,000 different ways to define a string in Ruby, but it&#8217;s the simple timesavers like this that make the language really shine.</p>
+
+<p>Of course, if you were using Rails, you could just</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="constant">Person</span><span class="punct">.</span><span class="ident">find</span><span class="punct">(</span><span class="ident">person_id</span><span class="punct">).</span><span class="ident">orders</span>
+</code></pre></div>
+
+
+<p>&#8230;which just goes to show how much smarter and more sexually attractive Railers are than everybody else.</p>
+
+<p>NOTE: Originally, I was going to include connection and execution of the query, but that would have blown the VBScript and Ruby examples up an extra four lines of code each. Using recommended practices, it would have bloated the C# code up another 15 lines, plus a stored procedure definition.</p>
+
+<p>The Rails example would still have been only one line. Simplicity ftw!</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Multi-line-strings-in-Ruby-I-Love-Carriage-Returns/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/How-to-Turn-a-Rails-Application-Into-a-Telnet-Server-in-30-Lines-of-Code/">How to Turn a Rails Application Into a Telnet Server in 30 Lines of Code!</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-09 00:00:00 -0500" pubdate  updated >Apr 9<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ruby on Rails is a beautiful thing; simple, fast, and powerful. As they say, it takes the pain out of web development.</p>
+
+<p>I&#8217;m fortunate enough to have been able to use Rails at work for a few months now, and the more I learn about the Rails framework and the Ruby language, the more enamoured I become of the simplicity, beauty, and zen-like nature of these tools. But you didn&#8217;t come here to see me gush with adoration like a schoolgirl at an Elvis concert, you came to see:</p>
+
+<h4>How to Turn a Rails Application Into a Telnet Server in 30 Lines of Code!</h4>
+
+<!-- read more -->
+
+
+<p>&nbsp;</p>
+
+<div class="warning">
+<h3>PLEASE DON&#8217;T DO THIS!</h3>
+<p>
+What follows was intended to illustrate the power and flexibility of Ruby, not to kickstart somebody&#8217;s server project.  It&#8217;s alarming that this has been the most popular page on my blog for nearly a year, and somewhat embarrassing that I haven&#8217;t let people know more explicitly that this should not be used in real software.
+</p><p>
+If you need to write a telnet server, you should really, really really be using <a href="http://rubyforge.org/projects/eventmachine">EventMachine</a> anyway, which is better than GServer in just about every possible way.  GServer is still OK for knocking out spikes or quick prototypes, just be aware that GServer runs in an event loop, whereas EventMachine uses callbacks&#8211; anything you write will need to be retooled to move from one to the other.
+</p><p>
+That said, here&#8217;s the original article.
+</p>
+</div>
+
+
+<p>First, some code:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">&nbsp;1
+&nbsp;2
+&nbsp;3
+&nbsp;4
+&nbsp;5
+&nbsp;6
+&nbsp;7
+&nbsp;8
+&nbsp;9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</code><code><span class="comment">#!/usr/bin/env ruby</span>
+<span class="ident">require</span> <span class="punct">'</span><span class="string">config/environment</span><span class="punct">'</span>
+<span class="ident">require</span> <span class="punct">'</span><span class="string">gserver</span><span class="punct">'</span>
+
+<span class="keyword">class </span><span class="class">TestServer</span> <span class="punct">&lt;</span> <span class="constant">GServer</span>
+&nbsp;&nbsp;<span class="keyword">def </span><span class="method">serve</span><span class="punct">(</span><span class="ident">io</span><span class="punct">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">begin</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">'</span><span class="string">&gt;&gt; WELCOME &lt;&lt;</span><span class="punct">'</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">loop</span> <span class="keyword">do</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">begin</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">telnet_input</span> <span class="punct">=</span> <span class="ident">io</span><span class="punct">.</span><span class="ident">gets</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">break</span> <span class="keyword">if</span> <span class="ident">telnet_input</span> <span class="punct">=~</span> <span class="punct">/</span><span class="regex"><span class="escape">A</span>quit<span class="escape"></span></span><span class="punct">/</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="ident">eval</span><span class="punct">(</span><span class="ident">telnet_input</span><span class="punct">)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">rescue</span> <span class="constant">Exception</span> <span class="punct">=&gt;</span> <span class="ident">e</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Got kabooms from trying to eval user input</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Catch it &amp; let the user know</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">Oops - <span class="expr">#{e}</span></span><span class="punct">&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">log</span> <span class="punct">&quot;</span><span class="string">Received <span class="expr">#{telnet_input}</span></span><span class="punct">&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">&gt;&gt; GOODBYE &lt;&lt;</span><span class="punct">&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">io</span><span class="punct">.</span><span class="ident">close</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">rescue</span> <span class="constant">Exception</span> <span class="punct">=&gt;</span> <span class="ident">e</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># The server blew up... handle it here</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">DOH! - <span class="expr">#{e}</span></span><span class="punct">&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;<span class="keyword">end</span>
+<span class="keyword">end</span>
+
+
+<span class="ident">ts</span> <span class="punct">=</span> <span class="constant">TestServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+<span class="ident">ts</span><span class="punct">.</span><span class="ident">start</span>
+<span class="ident">ts</span><span class="punct">.</span><span class="ident">audit</span> <span class="punct">=</span> <span class="constant">true</span>
+<span class="ident">ts</span><span class="punct">.</span><span class="ident">join</span>
+</code></pre></div>
+
+
+<p>This code should work, as is, on just about any Rails application (as far as I&#8217;ve been able to tell; it&#8217;s worked on the few I&#8217;ve tried).</p>
+
+<p>Last night I was tooling around, playing with code. I&#8217;d had an idea for some server software I&#8217;d like to write, so I mocked up a quick throwaway system in Rails, and started playing around with some of the logic. I liked the results, and I&#8217;d already decided I wanted to write the server in Ruby, but the thought of taking all that functionality and porting everything to DBI calls or whatever was handy just made me tired, especially since Rails does all the tedious database tasks for you.</p>
+
+<p>Fortunately, I&#8217;m slowly learning that Ruby is written for lazy programmers, and after a little Googling and some educated guesses, I was able to whack the entire Rails app into a script simply by including:</p>
+
+<div class="ruby"><pre><code>  <span class="ident">require</span> <span class="punct">'</span><span class="string">config/environment</span><span class="punct">'</span>
+</code></pre></div>
+
+
+<p>&#8230;at the top of a file in the project root. This makes everything available to your application.</p>
+
+<div class="ruby"><pre><code>  <span class="comment">#!/usr/bin/env ruby</span>
+  <span class="ident">require</span> <span class="punct">'</span><span class="string">config/environment</span><span class="punct">'</span>
+  <span class="ident">require</span> <span class="punct">'</span><span class="string">gserver</span><span class="punct">'</span>
+</code></pre></div>
+
+
+<p>This sets the scripting environment, includes the Rails app, and makes the GServer class available. GServer is a freebie that comes with Ruby, so there&#8217;s no need for gem installs or other libraries.</p>
+
+<div class="ruby"><pre><code>  <span class="keyword">class </span><span class="class">TestServer</span> <span class="punct">&lt;</span> <span class="constant">GServer</span>
+    <span class="keyword">def </span><span class="method">serve</span><span class="punct">(</span><span class="ident">io</span><span class="punct">)</span>
+</code></pre></div>
+
+
+<p>We&#8217;re then creating our own class which inherits from GServer, and overriding its &#8220;serve&#8221; method, which is where all the interesting stuff happens.</p>
+
+<div class="ruby"><pre><code>  <span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">'</span><span class="string">&gt;&gt; WELCOME &lt;&lt;</span><span class="punct">'</span>
+  <span class="ident">loop</span> <span class="keyword">do</span>
+    <span class="keyword">begin</span>
+      <span class="ident">telnet_input</span> <span class="punct">=</span> <span class="ident">io</span><span class="punct">.</span><span class="ident">gets</span>
+      <span class="keyword">break</span> <span class="keyword">if</span> <span class="ident">telnet_input</span> <span class="punct">=~</span> <span class="punct">/</span><span class="regex"><span class="escape">A</span>quit<span class="escape"></span></span><span class="punct">/</span>
+      <span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="ident">eval</span><span class="punct">(</span><span class="ident">telnet_input</span><span class="punct">)</span>
+    <span class="keyword">end</span>
+    <span class="ident">log</span> <span class="punct">&quot;</span><span class="string">Received <span class="expr">#{telnet_input}</span></span><span class="punct">&quot;</span>
+  <span class="keyword">end</span>
+  <span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">&gt;&gt; GOODBYE &lt;&lt;</span><span class="punct">&quot;</span>
+  <span class="ident">io</span><span class="punct">.</span><span class="ident">close</span>
+</code></pre></div>
+
+
+<p>This is the heart of the server (without the exception handling). Simply speaking, the serve() method is what handles user connections, and the &#8220;io&#8221; object lets us do gets and puts across the wire.</p>
+
+<p>When a user connects, we spit out a welcome message, then go into an endless loop that responds to user requests. The following:</p>
+
+<div class="ruby"><pre><code>  <span class="ident">telnet_input</span> <span class="punct">=</span> <span class="ident">io</span><span class="punct">.</span><span class="ident">gets</span>
+</code></pre></div>
+
+
+<p>&#8230;grabs whatever line the user types in, terminating by default on a carriage return. We need to throw the result of io.gets into a variable, since making multiple calls to io.gets will cause the system to grab multiple lines of input from the stream.</p>
+
+<div class="ruby"><pre><code>  <span class="keyword">break</span> <span class="keyword">if</span> <span class="ident">telnet_input</span> <span class="punct">=~</span> <span class="punct">/</span><span class="regex"><span class="escape">A</span>quit$</span><span class="punct">/</span>
+</code></pre></div>
+
+
+<p>&#8230;kicks us out of the loop if the user types &#8220;quit&#8221;. The &#8220;A&#8221; portion of the regex matches the beginning of the string, and the &#8220;$&#8221; matches the &#8220;end of line&#8221; character.</p>
+
+<div class="ruby"><pre><code>  <span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="ident">eval</span><span class="punct">(</span><span class="ident">telnet_input</span><span class="punct">)</span>
+  <span class="ident">log</span> <span class="punct">&quot;</span><span class="string">Received <span class="expr">#{telnet_input}</span></span><span class="punct">&quot;</span>
+</code></pre></div>
+
+
+<p>The first line here does an eval() on whatever the user typed in, returning the value back across the wire. This should allow the user to run any command that Ruby (and your Rails app) will accept. The second line spits whatever the user typed in to the console where the server is running.</p>
+
+<div class="ruby"><pre><code>  <span class="ident">io</span><span class="punct">.</span><span class="ident">puts</span> <span class="punct">&quot;</span><span class="string">&gt;&gt; GOODBYE &lt;&lt;</span><span class="punct">&quot;</span>
+  <span class="ident">io</span><span class="punct">.</span><span class="ident">close</span>
+</code></pre></div>
+
+
+<p>Once the loop is broken, we burp out a fond farewell and cleanly close the connection.</p>
+
+<div class="ruby"><pre><code>  <span class="ident">ts</span> <span class="punct">=</span> <span class="constant">TestServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+  <span class="ident">ts</span><span class="punct">.</span><span class="ident">start</span>
+  <span class="ident">ts</span><span class="punct">.</span><span class="ident">audit</span> <span class="punct">=</span> <span class="constant">true</span>
+  <span class="ident">ts</span><span class="punct">.</span><span class="ident">join</span>
+</code></pre></div>
+
+
+<p>The rest of the code just sets a few variables and runs the service. The &#8220;1234&#8221; on the creation of the &#8220;ts&#8221; object sets the listening port. Turning on auditing allows us to see when someone logs on and off from the console (which can easily be redirected to a log file).</p>
+
+<h5>CAVEATS:</h5>
+
+<p>This is an extremely simple server. It has no security, no performance optimization, and probably has more holes than a cheesecloth factory. It is very naïve, and while it technically allows multiple users to log on, they&#8217;ll all share the same class variables. Really, it&#8217;s only interesting at this point to show what can be done.</p>
+
+<p>That having been said, the ease with which I managed it is one of the many testaments to Ruby&#8217;s power and simplicity. I&#8217;ve programmed for many years, coded a number of servers, and this was the first time I&#8217;ve ever felt drunk with power after a coding session. &#8220;I can do anything!&#8221; I bellowed as I reeled around the room, knocking old monitors and dusty programming tomes off the desk. &#8220;No one can stop me!&#8221; Fortunately, my wife, who is a lot more level-headed than I am, pointed out that she could, indeed, stop me, since it had gone past two in the morning.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/How-to-Turn-a-Rails-Application-Into-a-Telnet-Server-in-30-Lines-of-Code/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Harley-Quin-the-Amazing-Wonder-Dog/">Harley Quin the Amazing Wonder Dog</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-09 00:00:00 -0500" pubdate  updated >Apr 9<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Amazing in the sense of not exactly being the brightest bulb on the tree&#8230;</p>
+
+<p><a href="http://www.flickr.com/photos/calamitylane/tags/harley/"><img src="http://farm2.static.flickr.com/1434/1099421771_1e11de1a06_m.jpg" alt="Harley the dog" /> </a>
+<a href="http://www.flickr.com/photos/calamitylane/tags/harley/"><img src="http://farm2.static.flickr.com/1262/1099421797_8366f13d8f_m.jpg" alt="Harley the dog" /></a></p>
+
+<p>&#8230;but making up for it with cute!</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Harley-Quin-the-Amazing-Wonder-Dog/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+<nav role="pagination">
+  <div>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+      <a class="next" href="/page6/">Newer &rarr;</a>
+    
+  </div>
+</nav>
+
+<script type="text/javascript">
+    var disqus_shortname = 'calamitylane';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</div>
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/Hidden-Chrome-Features-on-CR-48/">Hidden Chrome Features on CR-48</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Chrome OS on the CR-48: It Has Developer Bits!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Name-The-Next-Budd/">Name The Next Budd</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Zombie-Songs/">Zombie Songs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/A-More-Effective-Name/">A More Effective Name</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Eric Budd -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

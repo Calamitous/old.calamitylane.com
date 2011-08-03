@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Calamity Lane</title>
+  <meta name="author" content="Eric Budd">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://calamitylane.com/index.html"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Calamity Lane" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Calamity Lane</a></h1>
+  
+    <h2>Curious Code for Curious Coders</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:calamitylane.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Hidden-Chrome-Features-on-CR-48/">Hidden Chrome Features on CR-48</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-12-31 00:00:00 -0600" pubdate  updated >Dec 31<span>st</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After having playing around with ChromeOS on the CR-48 netbook (<a href="http://calamitylane.com/articles/programming/chrome-os-on-the-cr-48-it-has-developer-bits">which I&#8217;ve blogged about before</a>), I&#8217;ve found a few more interesting tidbits that let you dig deeper into the system.</p>
+
+<br /><br /><br />
+
+
+<h2>tl;dr</h2>
+
+<ul>
+<li>Experimental Features/Flash Drives: chrome://flags</li>
+<li>Nicer View of Memory Usage: about:memory</li>
+<li>Hilarious Pranks: about:crash</li>
+<li>Wi-Fi Troubleshooting: about:network</li>
+<li>Manage Extensions and Apps: chrome://extensions</li>
+</ul>
+
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Hidden-Chrome-Features-on-CR-48/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Chrome OS on the CR-48: It Has Developer Bits!</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-12-19 00:00:00 -0600" pubdate  updated >Dec 19<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So for anyone out there who is not already insanely jealous of my good looks and/or impeccable fashion sense, you should know I was one of the recipients of a CR-48 netbook in Google&#8217;s free giveaway.</p>
+
+<p>A full review is forthcoming (sneak preview: it is awesome), but here I just wanted to share a couple quick things I found that turn ChromeOS from an interesting toy to a usable developer&#8217;s tool.</p>
+
+<h2>tl;dr</h2>
+
+<ul>
+<li>Process Manager/Task Manager: Shift-Esc</li>
+<li>Shell/SSH Client: Ctrl-Alt-t</li>
+<li>Developer Tools: Ctrl-Shift-i</li>
+</ul>
+
+
+<!-- read more -->
+
+
+<h2>Process Manager/Task Manager:</h2>
+
+<p>While using Chrome on Ubuntu, I learned that pressing &#8220;Shift-Esc&#8221; would bring up a Chrome-specific task manager, displaying memory and CPU usage, and making a few other interesting stats available.</p>
+
+<p>Once I got my hands on the CR-48, I quickly started to swamp it with flash, banner ads, and JS-heavy front-ends (GMail, I&#8217;m looking at <em>you</em>).  Sure enough, &#8220;Shift-Esc&#8221; popped up my process list, allowing me to evaluate and kill chunky processes.</p>
+
+<h2>Shell and SSH client:</h2>
+
+<p>For development work, I can skate by with nothing more than a browser and an SSH client.  Since ChromeOS is billed as a browser-only OS, I figured I was out of luck.  I started hunting around for browser-based SSH clients, but most of them require you to either install special software on your server (not really workable if I want to connect on an ad-hoc basis) or trust your SSH logins and/or keys to some web service (which I will consent to shortly after Hades develops a nice thick layer of permafrost).</p>
+
+<p>Fortunately, Google had the foresight to build a shell into ChromeOS.  Press &#8220;Ctrl-Alt-t&#8221; to pop open a new terminal.  The shell is called &#8220;crosh&#8221; (short for &#8220;Chrome OS Shell&#8221;, I suspect)  It&#8217;s not going to replace bash anytime soon; its functionality appears to be limited mostly to diagnostics and network configuration.</p>
+
+<p>It does provide an SSH client, which feels snappy and appears to work well.  Some of the Unicode characters in the shell come across a bit garbled (a side effect of a fancy shell prompt on my dev box), but that&#8217;s the only complaint I&#8217;ve had so far.</p>
+
+<p>You can open multiple terminals, and you can switch between them (and your open browser windows) with Alt-Tab (or the built in window switcher button).</p>
+
+<h2>Developer Tools: DOM Inspector, Javascript Console, etc.:</h2>
+
+<p>If you&#8217;ve been using Chrome for development, you&#8217;re probably already familiar with the developer tools (which are rapidly replacing Firebug as my favorite browser tool).  &#8220;Ctrl-Shift-i&#8221; pops up the tool dock (which can then be shunted out to its own separate window if you need to dig around in there for a while).  Right-clicking a screen element and selecting &#8220;Inspect element&#8221; still works exactly as expected.  &#8220;Ctrl-Shift-i&#8221; a second time makes the inspector go away.</p>
+
+<p>These features, combined with the wi-fi and 3g, make the CR-48 a very usable mobile development platform.  It&#8217;s not going to replace a meaty devbox with a ton of RAM and three monitors, but for some on-the-go coding, I&#8217;m surprised and pleased with just how capable it really is.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Name-The-Next-Budd/">Name the Next Budd</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-11-21 00:00:00 -0600" pubdate  updated >Nov 21<span>st</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&#8217;s that time again&#8230;</p>
+
+<p>Take the Survey:</p>
+
+<p><a href="http://namethebudd.wufoo.com/forms/m7x3p9/" title="Name That Budd II">Name that Budd!</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Name-The-Next-Budd/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/Zombie-Songs/">Zombie Songs</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-09-22 00:00:00 -0500" pubdate  updated >Sep 22<span>nd</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For all those times when you&#8217;ve been thinking to yourself &#8220;Man, this would be the perfect situation in which to play a zombie song,&#8221; I&#8217;m glad to say modern independent musicians have stepped up to fill this gap:</p>
+
+<ul>
+<li>Jonathan Coulton, <a href="http://www.youtube.com/watch?v=UQYjZc7gKXc">Re: Your Brains</a></li>
+<li>No More Kings, <a href="http://www.youtube.com/watch?v=I9BRUe4yToQ">Zombie Me</a></li>
+</ul>
+
+
+<p>Further zombie song recommendations are welcome in the comments.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/Zombie-Songs/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/A-More-Effective-Name/">A More Effective Name</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-08-18 00:00:00 -0500" pubdate  updated >Aug 18<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A quick note:</p>
+
+<p>If you are:
+* Using Rails
+* Using RSpec
+* Have just discovered the incredible joy of named scopes</p>
+
+<p>&#8230;restrain yourself, by any means available (up to and including physical violence) from creating a named scope called &#8220;public&#8221; or &#8220;private.&#8221;  The reasons for this should be fairly obvious.</p>
+
+<p>Really, whoever ends up cleaning up behind you will appreciate it.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/A-More-Effective-Name/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+<nav role="pagination">
+  <div>
+    
+      <a class="prev" href="/page2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</nav>
+
+<script type="text/javascript">
+    var disqus_shortname = 'calamitylane';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</div>
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/Hidden-Chrome-Features-on-CR-48/">Hidden Chrome Features on CR-48</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Chrome OS on the CR-48: It Has Developer Bits!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Name-The-Next-Budd/">Name The Next Budd</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Zombie-Songs/">Zombie Songs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/A-More-Effective-Name/">A More Effective Name</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Eric Budd -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

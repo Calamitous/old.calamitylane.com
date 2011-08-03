@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title></title>
+  <link href="http://calamitylane.com/atom.xml" rel="self"/>
+  <link href="http://calamitylane.com/"/>
+  <updated>2011-08-03T18:45:34-05:00</updated>
+  <id>http://calamitylane.com/</id>
+  <author>
+    <name>Eric Budd</name>
+    
+  </author>
+
+  
+  <entry>
+    <title>Hidden Chrome Features on CR-48</title>
+    <link href="http://calamitylane.com/blog/Hidden-Chrome-Features-on-CR-48/"/>
+    <updated>2010-12-31T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/Hidden-Chrome-Features-on-CR-48</id>
+    <content type="html">&lt;p&gt;After having playing around with ChromeOS on the CR-48 netbook (&lt;a href=&quot;http://calamitylane.com/articles/programming/chrome-os-on-the-cr-48-it-has-developer-bits&quot;&gt;which I've blogged about before&lt;/a&gt;), I've found a few more interesting tidbits that let you dig deeper into the system.&lt;/p&gt;
+
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+
+
+&lt;h2&gt;tl;dr&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Experimental Features/Flash Drives: chrome://flags&lt;/li&gt;
+&lt;li&gt;Nicer View of Memory Usage: about:memory&lt;/li&gt;
+&lt;li&gt;Hilarious Pranks: about:crash&lt;/li&gt;
+&lt;li&gt;Wi-Fi Troubleshooting: about:network&lt;/li&gt;
+&lt;li&gt;Manage Extensions and Apps: chrome://extensions&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;!-- more --&gt;
+
+
+&lt;h2&gt;Experimental Features/Flash Drives:&lt;/h2&gt;
+
+&lt;p&gt;If you've tried to hook a flash drive up to your CR-48, you may have been disappointed to discover that the CR-48 doesn't yet support this.&lt;/p&gt;
+
+&lt;p&gt;Going to the address &lt;strong&gt;chrome://flags&lt;/strong&gt; opens up a few options for you.  The page clearly states that these are experimental and possibly harmful, but there is an option to enable the &quot;Advanced File System,&quot; which includes USB and SD support.&lt;/p&gt;
+
+&lt;p&gt;There are a few other features to play with: a built-in media player, remoting, background apps and so forth.  Definitely some good stuff to poke at in there.&lt;/p&gt;
+
+&lt;h2&gt;Nicer View of Memory Usage:&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;http://calamitylane.com/articles/programming/chrome-os-on-the-cr-48-it-has-developer-bits&quot;&gt;my last post&lt;/a&gt; I showed how &quot;Shift-Esc&quot; pops up a process viewer, which could be used to keep an eye on any misbehaving pages.  This is nice, but the window is tiny, and if you tend to have 40 or 50 tabs open at any given time, it can be burdensome to scroll through the list.&lt;/p&gt;
+
+&lt;p&gt;Going to &lt;strong&gt;about:memory&lt;/strong&gt; will give you a nice, full-page list of all your process' memory consumption.  This list is not sortable, but if you're looking for a specific process, you can use the Chrome's find-in-page function, since the memory usage displays as a regualar web page.&lt;/p&gt;
+
+&lt;h2&gt;Hilarious Pranks:&lt;/h2&gt;
+
+&lt;p&gt;Putting &lt;strong&gt;about:crash&lt;/strong&gt; in the address bar shows Chrome's &quot;sad folder&quot; crash page.&lt;/p&gt;
+
+&lt;p&gt;Something about this makes me want to quietly set about:crash as someone's homepage.  Probably because I am a terrible, terrible person.&lt;/p&gt;
+
+&lt;h2&gt;Wi-Fi Troubleshooting:&lt;/h2&gt;
+
+&lt;p&gt;Looking at &lt;strong&gt;about:network&lt;/strong&gt; will show you a list of all available wi-fi and 3G connections (along with signal strength and other typical wi-fi info), and a list of &quot;remembered&quot; connections.&lt;/p&gt;
+
+&lt;p&gt;If you're playing with router settings or testing things, you can set this view to automatically refresh by appending a number of seconds to the address.  For example, pointing your browser to &lt;strong&gt;about:network/3&lt;/strong&gt; will cause the page to refresh every 3 seconds.  This is handy if you're looking for a good spot to set up; you can keep an eye on signal strengths as you move around.&lt;/p&gt;
+
+&lt;h2&gt;Manage Extensions and Apps:&lt;/h2&gt;
+
+&lt;p&gt;You've probably seen this one if you're used to using Chrome on other OSes, but for some reason, on ChromeOS this doesn't show up on the menu.  Going to &lt;strong&gt;chrome://extensions&lt;/strong&gt; will show you a list of all your installed extensions and apps.  You can disable or uninstall them from here.&lt;/p&gt;
+
+&lt;p&gt;Additionally, you can get to the &quot;Developer Mode&quot; options, which is handy if you're writing a Chrome extension.  You can install a local extension, package it up, or force it to reload.&lt;/p&gt;
+
+&lt;p&gt;I used this extensively while writing my &lt;a href=&quot;https://chrome.google.com/webstore/detail/mbaomoafgihhkhgmkkoealeopilfdeaf#&quot;&gt;Mustard Gas&lt;/a&gt; extension.&lt;/p&gt;
+
+&lt;p&gt;If you want to get into Chrome extension development, You can start &lt;a href=&quot;http://code.google.com/chrome/extensions/getstarted.html&quot;&gt;here&lt;/a&gt; or begin with Google's &lt;a href=&quot;http://code.google.com/chrome/extensions/faq.html&quot;&gt;FAQs&lt;/a&gt;.  Chrome extensions are just HTML5 and Javascript, so if you've been doing any web development, you already know 90% of what you need to write Chrome extensions.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Chrome OS on the CR-48: It Has Developer Bits!</title>
+    <link href="http://calamitylane.com/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/"/>
+    <updated>2010-12-19T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits</id>
+    <content type="html">&lt;p&gt;So for anyone out there who is not already insanely jealous of my good looks and/or impeccable fashion sense, you should know I was one of the recipients of a CR-48 netbook in Google's free giveaway.&lt;/p&gt;
+
+&lt;p&gt;A full review is forthcoming (sneak preview: it is awesome), but here I just wanted to share a couple quick things I found that turn ChromeOS from an interesting toy to a usable developer's tool.&lt;/p&gt;
+
+&lt;h2&gt;tl;dr&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Process Manager/Task Manager: Shift-Esc&lt;/li&gt;
+&lt;li&gt;Shell/SSH Client: Ctrl-Alt-t&lt;/li&gt;
+&lt;li&gt;Developer Tools: Ctrl-Shift-i&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;!-- read more --&gt;
+
+
+&lt;h2&gt;Process Manager/Task Manager:&lt;/h2&gt;
+
+&lt;p&gt;While using Chrome on Ubuntu, I learned that pressing &quot;Shift-Esc&quot; would bring up a Chrome-specific task manager, displaying memory and CPU usage, and making a few other interesting stats available.&lt;/p&gt;
+
+&lt;p&gt;Once I got my hands on the CR-48, I quickly started to swamp it with flash, banner ads, and JS-heavy front-ends (GMail, I'm looking at &lt;em&gt;you&lt;/em&gt;).  Sure enough, &quot;Shift-Esc&quot; popped up my process list, allowing me to evaluate and kill chunky processes.&lt;/p&gt;
+
+&lt;h2&gt;Shell and SSH client:&lt;/h2&gt;
+
+&lt;p&gt;For development work, I can skate by with nothing more than a browser and an SSH client.  Since ChromeOS is billed as a browser-only OS, I figured I was out of luck.  I started hunting around for browser-based SSH clients, but most of them require you to either install special software on your server (not really workable if I want to connect on an ad-hoc basis) or trust your SSH logins and/or keys to some web service (which I will consent to shortly after Hades develops a nice thick layer of permafrost).&lt;/p&gt;
+
+&lt;p&gt;Fortunately, Google had the foresight to build a shell into ChromeOS.  Press &quot;Ctrl-Alt-t&quot; to pop open a new terminal.  The shell is called &quot;crosh&quot; (short for &quot;Chrome OS Shell&quot;, I suspect)  It's not going to replace bash anytime soon; its functionality appears to be limited mostly to diagnostics and network configuration.&lt;/p&gt;
+
+&lt;p&gt;It does provide an SSH client, which feels snappy and appears to work well.  Some of the Unicode characters in the shell come across a bit garbled (a side effect of a fancy shell prompt on my dev box), but that's the only complaint I've had so far.&lt;/p&gt;
+
+&lt;p&gt;You can open multiple terminals, and you can switch between them (and your open browser windows) with Alt-Tab (or the built in window switcher button).&lt;/p&gt;
+
+&lt;h2&gt;Developer Tools: DOM Inspector, Javascript Console, etc.:&lt;/h2&gt;
+
+&lt;p&gt;If you've been using Chrome for development, you're probably already familiar with the developer tools (which are rapidly replacing Firebug as my favorite browser tool).  &quot;Ctrl-Shift-i&quot; pops up the tool dock (which can then be shunted out to its own separate window if you need to dig around in there for a while).  Right-clicking a screen element and selecting &quot;Inspect element&quot; still works exactly as expected.  &quot;Ctrl-Shift-i&quot; a second time makes the inspector go away.&lt;/p&gt;
+
+&lt;p&gt;These features, combined with the wi-fi and 3g, make the CR-48 a very usable mobile development platform.  It's not going to replace a meaty devbox with a ton of RAM and three monitors, but for some on-the-go coding, I'm surprised and pleased with just how capable it really is.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Name The Next Budd</title>
+    <link href="http://calamitylane.com/blog/Name-The-Next-Budd/"/>
+    <updated>2010-11-21T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/Name-The-Next-Budd</id>
+    <content type="html">&lt;p&gt;It's that time again...&lt;/p&gt;
+
+&lt;p&gt;Take the Survey:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://namethebudd.wufoo.com/forms/m7x3p9/&quot; title=&quot;Name That Budd II&quot;&gt;Name that Budd!&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Zombie Songs</title>
+    <link href="http://calamitylane.com/blog/Zombie-Songs/"/>
+    <updated>2009-09-22T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Zombie-Songs</id>
+    <content type="html">&lt;p&gt;For all those times when you've been thinking to yourself &quot;Man, this would be the perfect situation in which to play a zombie song,&quot; I'm glad to say modern independent musicians have stepped up to fill this gap:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jonathan Coulton, &lt;a href=&quot;http://www.youtube.com/watch?v=UQYjZc7gKXc&quot;&gt;Re: Your Brains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;No More Kings, &lt;a href=&quot;http://www.youtube.com/watch?v=I9BRUe4yToQ&quot;&gt;Zombie Me&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Further zombie song recommendations are welcome in the comments.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>A More Effective Name</title>
+    <link href="http://calamitylane.com/blog/A-More-Effective-Name/"/>
+    <updated>2009-08-18T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/A-More-Effective-Name</id>
+    <content type="html">&lt;p&gt;A quick note:&lt;/p&gt;
+
+&lt;p&gt;If you are:
+* Using Rails
+* Using RSpec
+* Have just discovered the incredible joy of named scopes&lt;/p&gt;
+
+&lt;p&gt;...restrain yourself, by any means available (up to and including physical violence) from creating a named scope called &quot;public&quot; or &quot;private.&quot;  The reasons for this should be fairly obvious.&lt;/p&gt;
+
+&lt;p&gt;Really, whoever ends up cleaning up behind you will appreciate it.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Annihilate Ubuntu's Annoying System Beep</title>
+    <link href="http://calamitylane.com/blog/Annihilate-Ubuntu-s-Annoying-System-Beep/"/>
+    <updated>2009-06-09T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Annihilate-Ubuntu-s-Annoying-System-Beep</id>
+    <content type="html">&lt;p&gt;A quickie to remind myself next time I build an Ubuntu box, and am being slowly driven batty by a tiny, tinny obsolete PC speaker made of hate:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gvim /etc/modprobe.d/blacklist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(or /etc/modprobe.d/blacklist.conf, for Ubuntu 9.04)
+...and add the following line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;blacklist pcspkr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;From the command line, kill it in the current session:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo rmmod pcspkr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No more waking the baby with late-night hacking sessions!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Select Tag Funkiness With Merb</title>
+    <link href="http://calamitylane.com/blog/Select-Tag-Funkiness-With-Merb/"/>
+    <updated>2009-01-18T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/Select-Tag-Funkiness-With-Merb</id>
+    <content type="html">&lt;p&gt;In my ongoing travails with Merb &amp;amp; Friends, I've run across a few behaviors with the select() form helper method.  Since there's currently a dearth of examples, I thought I'd document them for myself and future googlers.&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;If you're having problems getting select() to work in Merb, bear the following in mind:&lt;/p&gt;
+
+&lt;p&gt;If you type the following:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:widget_id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:collection&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;all&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You may get the error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;undefined method 'first' in &amp;lt;Widget:0x7fae15562fc8&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(you may also get &quot;undefined method 'last'&quot;)&lt;/p&gt;
+
+&lt;p&gt;select() expects two options to be passed in: :value_method and :text_method.  If you provide neither, Merb will assume that your collection is an array, and will default them to the 'first' and 'last' methods respectively.  Add your field names or methods explicitly to make select() happy:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1
+2&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:widget_id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:collection&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:value_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;symbol&quot;&gt;:text_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:name&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Additionally, there's a strange behavior, in which the :selected option appears to be ignored-- when you pull your form back up after a save, the select box will be back on the default value:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1
+2&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:widget_id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:collection&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:value_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;symbol&quot;&gt;:text_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:selected&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;@whongo&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;widget_id&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The problem here is that Merb expects the :selected option to be a string.  Cast your selected value to a string and all will be well:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1
+2&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:widget_id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:collection&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Widget&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:value_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;symbol&quot;&gt;:text_method&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:name&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:selected&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;@whongo&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;widget_id&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;to_s&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>A Rails Developer Spends One Week With Merb (and HAML and JQuery and DataMapper)</title>
+    <link href="http://calamitylane.com/blog/A-Rails-Developer-Spends-One-Week-With-Merb-and-HAML-and-JQuery-and-DataMapper/"/>
+    <updated>2009-01-08T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/A-Rails-Developer-Spends-One-Week-With-Merb-and-HAML-and-JQuery-and-DataMapper</id>
+    <content type="html">&lt;p&gt;Developers often talk about some hot new technology they plan on spending time with, but very rarely do they ever get around to it.  I'm ordinarily in the same boat, but last week I had a new personal project crop up for a simple web application (5-6 models) which was an ideal candidate for testing out a slew of new tech that I've been meaning to get around to.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.merbivore.com/&quot;&gt;Merb&lt;/a&gt;, an erstwhile competitor to Rails, has been making a big splash lately.  I decided to step out of my comfort zone of Rails/Acti* and into the wild and woolly world of young, cutting-edge frameworks.  Since I'm undergoing the pain of learning a new framework, I figured I'd go whole hog and use &lt;a href=&quot;http://haml.hamptoncatlin.com&quot;&gt;Haml&lt;/a&gt;, &lt;a href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt;, and &lt;a href=&quot;http://datamapper.org/doku.php&quot;&gt;DataMapper&lt;/a&gt;, as well.&lt;/p&gt;
+
+&lt;p&gt;Before last week, I'd never done much more than spin through the initial tutorials for any of these tools.  That being the case, I can't really speak to performance, deployment, or any of half-a-hundred other critical issues to consider when selecting a framework-- this is strictly a shallow, first-impressions review.&lt;/p&gt;
+
+&lt;p&gt;I welcome comments and corrections to my observations, and suggestions for easing some of the new-developer pain.&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;h1&gt;&lt;a href=&quot;http://www.merbivore.com/&quot;&gt;Merb&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Having only recently reached 1.0, Merb's still a bit rough around the edges.  Documentation and tutorials are sparse, and there are a few API decisions that feel odd, but all that's to be expected.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, a Rails developer will have no trouble whatsoever translating their experience wholesale over to Merb.  Everything feels familiar and works as expected.  Even some Rails functions which are not documented anywhere in Merb (such as 'cycle') are present and work as expected.&lt;/p&gt;
+
+&lt;p&gt;Overall, using Merb is a reasonably pain-free experience and follows the &lt;abbr title=&quot;Principle of Least Surprise&quot;&gt;POLS&lt;/abbr&gt;, with a few minor exceptions.&lt;/p&gt;
+
+&lt;p&gt;Most surprising so far is that there is no (evident) standardized way to handle resources with uncountable names.  Merb eschews Rails' &quot;-Controller&quot; addendum for class names, separating models and controllers strictly by pluralization.  You'll run into naming collisions with uncountable class names (&quot;Series&quot;, for example).  This is not difficult to fix, but it's a surprising oversight for someone used to the smooth Rails development process.&lt;/p&gt;
+
+&lt;p&gt;The app I'm building will only have two or three users, so performance is not a major concern at this point (I may even leave the database in sqlite3).  I &lt;em&gt;will&lt;/em&gt; say that Merb starts up like a screaming banshee compared to Rails, which is good, since you'll be restarting a &lt;em&gt;lot&lt;/em&gt; during development.&lt;/p&gt;
+
+&lt;p&gt;Merb automatically reloads when you modify a model or controller file, but not when you modify a view file.  I know there's a perfectly rational reason behind this, but it can be frustrating, since the view templates are something to I do a lot of &quot;minor tweak-&gt;restart-&gt;check&quot; to.  Additionally, I tend to do a lot of exploratory testing of my model code in the console, and the automatic restarts don't save me much time, but they do wipe out my command history, so I need to keep my cut-n-paste skills sharp or else retype a lot of testing code.&lt;/p&gt;
+
+&lt;p&gt;A last nitpick is that the community doesn't seem quite as friendly or responsive as Rails'.  It's one of those somewhat understandable but still frustrating experiences-- yes, it's open-source, I can patch-and-submit, etc., but when I'm having a problem &lt;em&gt;right now,&lt;/em&gt; I'm not interested in hacking the framework-- &lt;em&gt;especially&lt;/em&gt; if it's likely that only my ignorance causing the problem.  I generally try very hard to work things out on my own before making a ticket or jumping into IRC, precisely because I know how difficult and ungratifying it can be to keep up with support requests.  The responses, especially on the tickets, do not always seem carefully thought out.&lt;/p&gt;
+
+&lt;p&gt;That said, there is much to love about Merb.  A few killer (for me) features create a much more pleasant development experience than Rails.  Some that stood out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RSpec is the default testing framework.  This is long overdue in Rails-- not having to jump through the install-gem-and-plugin-and-wait-what-version-of-rails hoops just to use RSpec is a huge burden gone.&lt;/li&gt;
+&lt;li&gt;Using a different ORM or view templating system requires changing only a single line of code (well, that and installing the 49 gems that get it running).  This is much nicer then Rails' heavy and largely immovable dependencies.&lt;/li&gt;
+&lt;li&gt;Specs are broken out into only two areas: models and requests.  The use of 'requests' eliminates the often-fuzzy line between controller and fragile view specs.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Overall, Merb feels much cleaner and less crufty than Rails.&lt;/p&gt;
+
+&lt;p&gt;Shortly after I started working with Merb, the merge with Rails was announced.  I'm ambivalent about it at the moment, but hopefully the Merb side will pick up the stability and smoothness of the Rails process (and some of the Rails community), and Rails can pick up many of Merb's new concepts.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a href=&quot;http://haml.hamptoncatlin.com/&quot;&gt;Haml&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;I've never been comfortable with ERb templates.  They smack of the raw string replacement philosophy of classic ASP.  I've long suspected that there must be a better way to handle view templating, but had no real idea how it could be accomplished.  Haml is one of the first systems I've seen to take a reasonable stab at this problem.&lt;/p&gt;
+
+&lt;p&gt;Haml was a solid win across the board.  It's stable, works exactly as advertised, and beats the pants off of ERb.  Documentation is complete and effective.  I can't speak about the support community, since I didn't have a single question that wasn't answered almost immediately by the documentation.&lt;/p&gt;
+
+&lt;p&gt;Really, I don't know what better to say about a piece of software than &quot;it worked well, cleaned up my code, and saved me a bunch of headaches.&quot;&lt;/p&gt;
+
+&lt;p&gt;It does take a little while to get your head into, but once you're there it's very intuitive and flows naturally if you're familiar with basic css selectors.  It's whitespace-sensitive (like Python), which eliminates a lot of the nesting you end up doing in ERb, and keeps your view templates looking nice.&lt;/p&gt;
+
+&lt;p&gt;Some folks have an inexplicable aversion to whitespace-sensitivity: if you're one of them, then you will definitely not like Haml.&lt;/p&gt;
+
+&lt;p&gt;Nonetheless, I think that nearly anyone who follows the advice on Haml's homepage and takes twenty minutes to convert one of their existing ERb templates (the uglier the better) will be a convert.&lt;/p&gt;
+
+&lt;p&gt;For any future projects where it's possible, I'll be using Haml.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a href=&quot;http://jquery.com/&quot;&gt;jQuery&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;I'll admit that I've openly derided the concept of &quot;unobtrusive javascript,&quot; which is a core concept of the jQuery library.  This is one case where I was utterly, embarrassingly, and happily wrong.&lt;/p&gt;
+
+&lt;p&gt;I don't have much client-side AJAXy fanciness going on, but having all the javascript code out of my way made development much easier, and the maintenance is clearly going to be less of a burden.&lt;/p&gt;
+
+&lt;p&gt;jQuery's DOM handling is very clear, and there's a surprising amount of flexibility and power easily available once you start digging into it.&lt;/p&gt;
+
+&lt;p&gt;I still don't &lt;em&gt;like&lt;/em&gt; javascript, but jQuery makes it much, much more tolerable.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a href=&quot;http://www.datamapper.org/&quot;&gt;DataMapper&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;DataMapper was the biggest disappointment of the lot.  I'd seen a presentation and played with it a bit.  I was very excited about it, because there are some very good ideas in DataMapper.  Unfortunately, the actual implementation is a bit of a train wreck.&lt;/p&gt;
+
+&lt;p&gt;The last time I used it, nearly a year ago, I was trying to tie it to CouchDB.  At the time, I wrote off my difficulties as 1) my limited understanding of DataMapper, and 2) trying to shoehorn a document database into a relational ORM with an incomplete library.&lt;/p&gt;
+
+&lt;p&gt;I'm sorry to report that the &quot;correct&quot; DataMapper experience is not significantly better.  Documentation and examples are painfully sparse, and several pieces simply don't work well.  Validation could not be made to function consistently, and associations are fraught with guesswork, when they work at all.&lt;/p&gt;
+
+&lt;p&gt;At one point, after four hours of frustration, I turned to IRC, where an admittedly helpful and pleasant person informed me that many-to-many associations in DataMapper are broken for a number of edge cases, and probably shouldn't be used.  I indicated, in the nicest way I could manage, that this should probably be displayed somewhere prominent on DataMapper's website.&lt;/p&gt;
+
+&lt;p&gt;The API is still in flux, so the few tutorials and examples that Google finds are likely as not to be out of date.  It's not hard to work around many of the missing or broken features, but the resultant code is slow to write, ugly to look at, and feature-incomplete.&lt;/p&gt;
+
+&lt;p&gt;DataMapper was so sharply disappointing precisely because it shows so much promise.  Much of the silliness of ActiveRecord is leapfrogged entirely-- things like counts and association loading are handled in a more rational way, slimming the API and boosting performance.&lt;/p&gt;
+
+&lt;p&gt;My understanding is that they're in the midst of an extended rewrite, and there are parts of the API (especially surrounding the problematic associations) that are under review for changes.  Hopefully they will be able to turn the quality around; the 0.9.8 version number belies the incompleteness of the library.&lt;/p&gt;
+
+&lt;h1&gt;&lt;a href=&quot;http://rspec.info/&quot;&gt;RSpec Bonus!&lt;/a&gt; 5% more verbiage FREE&lt;/h1&gt;
+
+&lt;p&gt;RSpec is a beautiful thing.  If you aren't you using it already, you are missing out on faster, more effective testing.  As testing frameworks go, RSpec is one of the best.&lt;/p&gt;
+
+&lt;p&gt;Others have stated more eloquently why &lt;strong&gt;You.should be_using_rspec&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1&gt;Overall&lt;/h1&gt;
+
+&lt;p&gt;I hope I don't give the impression here that working with Merb and cohorts is at all unpleasant-- quite the opposite.  It's far easier to burn up the wordcount criticizing flaws than it is saying &quot;Works great,&quot; and make no mistake that nearly everything works great.  Despite having not yet spent much time with these tools, I already have a comfortable workflow, and I certainly wouldn't be continuing development if the benefits these tools provide didn't outweigh the nitpicks I've been running into.&lt;/p&gt;
+
+&lt;p&gt;Merb is not the revolutionary leap that Rails was, but it's a clear evolutionary step.  Despite some roughness in a few places, it's a great system to work with, and I look forward to good things coming out of Merb's and Rails' merge.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>If You Like Lyrical Code...</title>
+    <link href="http://calamitylane.com/blog/If-You-Like-Lyrical-Code/"/>
+    <updated>2008-12-07T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/If-You-Like-Lyrical-Code</id>
+    <content type="html">&lt;p&gt;Osake reminded me this morning that I hadn't posted this one up yet...&lt;/p&gt;
+
+&lt;p&gt;``` ruby&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (self =~ /pina coladas/ &amp;amp;&amp;amp; Rain.caught(self)
+    &amp;amp;&amp;amp; !yoga.include?(self) &amp;amp;&amp;amp; self.brain == 0.5)
+  Personals.answer
+  self.relationship = :train_wreck
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+
+&lt;p&gt;Escape (The Pina Colada Song) -- Rupert Holmes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If you like Pina Coladas, and getting caught in the rain.
+If you're not into yoga, if you have half-a-brain...
+....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I'd never actually listened to the lyrics very carefully before this, but they're pretty horrible.  Effectively, both parties in a relationship decide to cheat on each other via the personals page, and end up contacting each other... and discovering that they like the same things.&lt;/p&gt;
+
+&lt;p&gt;Go ahead and read through the lyrics sometime, they're an excellent example of a relationship in which everything has gone terribly awry-- emotional distance, complete failure of communication, adultery, and pina coladas (which frankly aren't all that great).&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Bank of America: Bad, Bad, Bad</title>
+    <link href="http://calamitylane.com/blog/Bank-of-America-Bad-Bad-Bad/"/>
+    <updated>2008-11-24T00:00:00-06:00</updated>
+    <id>http://calamitylane.com/blog/Bank-of-America-Bad-Bad-Bad</id>
+    <content type="html">&lt;p&gt;So, yeah, this is going to be a little ranty; feel free to skip it if you like Bank of America, or just don't feel like hearing a windy blowhard spouting bile.&lt;/p&gt;
+
+&lt;p&gt;I'm not going into the many reasons I decided to close out my Bank of America account, just the representative experience of actually doing it.&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;So I rolled in, got to a teller, and told her I wanted to close my account.  She directed me to the back of the bank, since tellers can't close accounts.&lt;/p&gt;
+
+&lt;p&gt;Okay, fine.  I'm not going to get into asking why I can't just close my account through their horrible, horrible website, but fine.&lt;/p&gt;
+
+&lt;p&gt;Right after I'd emptied the account in preparation for closing it, they hit me &lt;em&gt;the very next day&lt;/em&gt; with a $10 &quot;below acceptable account balance&quot; fee.  And, of couse, a $25 overdraft fee, since there was a zero balance.&lt;/p&gt;
+
+&lt;p&gt;Okay, fine.  I'm leaving, it's your last chance to nickel-and-dime me, I understand.&lt;/p&gt;
+
+&lt;p&gt;The account-closing lady offered to take the fee off, but their fee-refunding computer system was down.  And there were people she could call to fix it, but they weren't going to be in until Monday.  I could come in Monday, and &quot;maybe&quot; she could get the fee taken off.  No thanks, I've been on that merry-go-round. (&quot;Maybe we could take off the balance charge, but you'll need to come in next Wednesday to take off the overdraft.&quot; &quot;Maybe we could take $5 dollars off the overdraft, but you'll need to call our service in Turbekistan, which only operates every other full moon.&quot; &quot;Oops, this other fee got put on your account.  Maybe you could...&quot;) Bleh.  NO THANKS.  I'll just take my lumps and pay the stupid $35 &quot;Get Out of Our Bank&quot; fee.&lt;/p&gt;
+
+&lt;p&gt;So she redirects me back to the tellers, since she can't deal with money.&lt;/p&gt;
+
+&lt;p&gt;Okay, fine, FINE.  I get back in line.&lt;/p&gt;
+
+&lt;p&gt;Once I get hold of another teller, I hand her my credit card.  She starts talking about a &quot;cash advance&quot; and whoa! I stomp the brakes, because my CC charges painfully punitive cash advance fees.  Apparently, Holy Cow, THEY ARE NOT ABLE TO RUN A CREDIT CARD AT BANK OF AMERICA.&lt;/p&gt;
+
+&lt;p&gt;Seriously?&lt;/p&gt;
+
+&lt;p&gt;So I offer her a debit card.  She gets that look, like &quot;Oh no this guy is about to flip out.&quot;  Apparently, I have to go to the ATM machine outside to withdraw cash to deposit, since THEY CAN'T DO DEBIT CARDS EITHER.  Although, she says, some customers have reported having &quot;trouble&quot; with the ATM machine.&lt;/p&gt;
+
+&lt;p&gt;No kidding.  Trouble, you say?  Shock!&lt;/p&gt;
+
+&lt;p&gt;Okay, fine.  Hit me with the cash advance fee, so I can finally close this stupid account and LEAVE.  Sure, sure.&lt;/p&gt;
+
+&lt;p&gt;She proceeds to walk over to a CREDIT CARD IMPRINTER.  You know, the old machines they stick your card into with a carbon slip, and slide the handle over, going &quot;SHONK-SHONK?&quot;  Seriously, she used one.  I don't think I've seen one of those since well before I was old enough to have a credit card.  I thought they only had them in museums for failed technology.  But I have physical evidence, a carbon-copy sales slip, which she then ran through the scanner hooked to her computer.&lt;/p&gt;
+
+&lt;p&gt;Honestly?  Take that 700 billion dollar bailout and buy yourselves a credit card machine.  You can get them on Ebay pretty cheap, I hear.&lt;/p&gt;
+
+&lt;p&gt;Then, of course, I get to take my fancy carbon slip back to the account closing lady.&lt;/p&gt;
+
+&lt;p&gt;Digression: Have you ever been to a renaissance festival?  They're a lot of fun: people dress in armor and medieval clothing and pretend to be lords and ladies and knights and so forth.  You can buy period clothing, big turkey legs to gnaw on, swords and axes, etc. from vendors scattered throughout.&lt;/p&gt;
+
+&lt;p&gt;Why do I bring this up?  THIS FAT HAIRY MAN IN CHAINMAIL, WHOSE STOREFRONT IS EFFECTIVELY A FEW PLANKS ON A MUDDY PATCH IN THE MIDDLE OF A FIELD, CAN ACCEPT ANY DEBIT AND/OR CREDIT CARD IN MY WALLET.  PERHAPS BANK OF AMERICA SHOULD CONTACT THIS MAN TO LEARN THE SECRETS OF HIS TECHNOLOGICAL MARVEL.&lt;/p&gt;
+
+&lt;p&gt;So maybe my account is closed, maybe not.  I'd give even odds that something else was &quot;down&quot; and I'll need to come back in for something.  Because I can clean every last dollar and dime from my account over the internet, but actually &lt;em&gt;closing&lt;/em&gt; the thing is serious enough to require my physical presence on bank premises.&lt;/p&gt;
+
+&lt;p&gt;Bad bank.  Bad naughty.  Bad.&lt;/p&gt;
+
+&lt;p&gt;UPDATE: While I understand that a good rant can be a lot of fun, I'd respectfully ask that you keep comments relatively clean-- if it's not something you'd say to your boss, or your mother, or shout at random passersby on a street corner, please don't put it in a comment.  Thanks!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Code Lyrical Umpteen-something...</title>
+    <link href="http://calamitylane.com/blog/Code-Lyrical-Umpteen-something/"/>
+    <updated>2008-10-30T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Code-Lyrical-Umpteen-something</id>
+    <content type="html">&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;&amp;nbsp;1
+&amp;nbsp;2
+&amp;nbsp;3
+&amp;nbsp;4
+&amp;nbsp;5
+&amp;nbsp;6
+&amp;nbsp;7
+&amp;nbsp;8
+&amp;nbsp;9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;class &lt;/span&gt;&lt;span class=&quot;class&quot;&gt;MaryMoon&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Vegetarian&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;initialize&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@ttl&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;2_524_554_080&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;doowop&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@loves&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Miso&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@alone&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;ambivalence&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;false&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;eat&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;doowop&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;ArgumentError&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Meat&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;sho_like&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Bone&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;doowop&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;Mary Moon&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;}&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As always, jump for answers!&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;New Age Girl -- Deadeye Dick&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Mary Moon, she's a vegetarian
+(Mary Moon, Mary Moon, Mary Moon)
+Mary Moon will outlive all the septaugenarians
+(Mary Moon, Mary Moon, Mary Moon)
+Oh she loves me so, she hates to be alone
+She don't eat meat but she sure like the bone
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Mysterious, Incomprehensible Capistrano Errors</title>
+    <link href="http://calamitylane.com/blog/Mysterious-Incomprehensible-Capistrano-Errors/"/>
+    <updated>2008-10-29T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Mysterious-Incomprehensible-Capistrano-Errors</id>
+    <content type="html">&lt;p&gt;So yesterday a co-worker and I were fighting fires in our Capistrano deploy scripts.  We'd been updating a crufty monstrosity of a cap script, and were getting  an error along the lines of:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;uninitialized&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;constant&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;#&amp;lt;Class:0x7f3230382cf0&amp;gt;::Capistrano::Deploy&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After half a day of rolling back every single change we'd made to the scripts in the last week, we discovered a small junk file with some test code we'd stuck in the 'lib/recipes' directory.  It was getting included even though it was not 'require'd anywhere.&lt;/p&gt;
+
+&lt;p&gt;PROTIP: CAPISTRANO INCLUDES EVERYTHING IN THE 'lib/recipes' DIRECTORY BECAUSE IT HATES YOU.&lt;/p&gt;
+
+
+&lt;p&gt;Also, it saves typing maybe three lines of code.&lt;/p&gt;
+
+
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>Berceuse Code Lyrical</title>
+    <link href="http://calamitylane.com/blog/Berceuse-Code-Lyrical/"/>
+    <updated>2008-10-17T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Berceuse-Code-Lyrical</id>
+    <content type="html">&lt;p&gt;Somewhat in the same vein as our last one:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;&amp;nbsp;1
+&amp;nbsp;2
+&amp;nbsp;3
+&amp;nbsp;4
+&amp;nbsp;5
+&amp;nbsp;6
+&amp;nbsp;7
+&amp;nbsp;8
+&amp;nbsp;9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;Son&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;pray&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;beneficiaries&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;beneficiaries&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;uniq&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;EVERYONE&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;size&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;raise&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;constant&quot;&gt;ArgumentError&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;Prayers should include everyone!&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;&amp;quot;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@prayed&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;true&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;tuck&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;@prayed&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;internal_temperature&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;99.9&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@sin_free&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;true&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;sleeping&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;@eyes_open&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;@pillow&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;gripped?&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@anthropomrphic_personification&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Sandman&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;enter&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;attribute&quot;&gt;@sin_free&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;false&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;Sandman&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;enter&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;Light&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;exit&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;Night&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;enter&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;Hand&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;take&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;never_never_land&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:off&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;Enter the Sandman by Metallica&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Say your prayers little one
+Don't forget, my son
+To include everyone
+
+Tuck you in, warm within
+Keep you free from sin
+Till the sandman he comes
+
+Sleep with one eye open
+Gripping your pillow tight
+
+Exit light
+Enter night
+Take my hand
+Off to never never land
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Brainmallows</title>
+    <link href="http://calamitylane.com/blog/Brainmallows/"/>
+    <updated>2008-10-14T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Brainmallows</id>
+    <content type="html">&lt;p&gt;I love these things.  They're all filler and no meat, like marshmallow sandwiches.  Which are also delicious.&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;&amp;nbsp;1
+&amp;nbsp;2
+&amp;nbsp;3
+&amp;nbsp;4
+&amp;nbsp;5
+&amp;nbsp;6
+&amp;nbsp;7
+&amp;nbsp;8
+&amp;nbsp;9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;class &lt;/span&gt;&lt;span class=&quot;class&quot;&gt;Jungle&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;attr_reader&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:fun&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:games&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:everything_you_want&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;welcome&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new_user&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new_user&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;new_user&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;attribute&quot;&gt;@@names&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;new_user&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;name&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;needs_query&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;Whatever: &lt;span class=&quot;expr&quot;&gt;#{needs_query}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;&amp;quot;&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;receive_money&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;amount&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;comment&quot;&gt;# TODO: this may be returning an unwanted value&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;comment&quot;&gt;# check with Jim in accounting&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:your_disease&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;amount&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0.0&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;constant&quot;&gt;Jungle&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;welcome&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;honey&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Answer after the jump.&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;Welcome to the Jungle -- Guns 'n' Roses&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Welcome to the jungle
+We got fun 'n' games
+We got everything you want
+Honey we know the names
+We are the people that can find
+Whatever you may need
+If you got the money honey
+We got your disease
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Your Buddhism is Indistinguishable From Its Surroundings</title>
+    <link href="http://calamitylane.com/blog/Your-Buddhism-is-Indistinguishable-From-Its-Surroundings/"/>
+    <updated>2008-10-10T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Your-Buddhism-is-Indistinguishable-From-Its-Surroundings</id>
+    <content type="html">&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;constant&quot;&gt;MY_DREAM&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;['&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;',&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;gold&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;',&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;']&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;karma.chameleon&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;times&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;come&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;}&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;Loving&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:easy&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;colors&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;MY_DREAM&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;punct&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;karma&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&amp;amp;&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:chameleon&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;Karma Chameleon, by Culture Club&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Karma karma karma karma karma chameleon
+You come and go
+You come and go
+Loving would be easy if your colors were like my dream
+Red, gold and green
+Red, gold and green
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Symbol.to_proc?  Oh yes I went there.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Stop That</title>
+    <link href="http://calamitylane.com/blog/Stop-That/"/>
+    <updated>2008-10-08T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Stop-That</id>
+    <content type="html">&lt;p&gt;I'm compelled to highlight a gem I found in our codebase the other day. If you ever find yourself writing something like:&lt;/p&gt;
+
+&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;ident&quot;&gt;variable&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;...go sit in the corner and think about what you did wrong.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Code Lyrical, for the Old Folks</title>
+    <link href="http://calamitylane.com/blog/Code-Lyrical-for-the-Old-Folks/"/>
+    <updated>2008-09-26T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Code-Lyrical-for-the-Old-Folks</id>
+    <content type="html">&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;&amp;nbsp;1
+&amp;nbsp;2
+&amp;nbsp;3
+&amp;nbsp;4
+&amp;nbsp;5
+&amp;nbsp;6
+&amp;nbsp;7
+&amp;nbsp;8
+&amp;nbsp;9
+10
+11
+12
+13&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;arg&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;arg&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;reject&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&amp;amp;&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:my_hair&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;years&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;from_now&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;MANY&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:valentine&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:birthday_greetings&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:bottle_of_wine&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;door&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;lock&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;('&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;2:45&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;')&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;need&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;TOO_OLD&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:feed&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;symbol&quot;&gt;:need&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;When I'm 64 -- The Beatles&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When I get older losing my hair,
+Many years from now
+Will you still be sending me a valentine,
+Birthday greetings, bottle of wine?
+Will you still be sending me a valentine
+Birthday greetings, bottle of wine?
+If I'd been out till quarter to three
+Would you lock the door?
+Will you still need me, will you still feed me
+When I'm sixty-four? 
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Code Lyrical III</title>
+    <link href="http://calamitylane.com/blog/Code-Lyrical-III/"/>
+    <updated>2008-09-20T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Code-Lyrical-III</id>
+    <content type="html">&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;&amp;nbsp;1
+&amp;nbsp;2
+&amp;nbsp;3
+&amp;nbsp;4
+&amp;nbsp;5
+&amp;nbsp;6
+&amp;nbsp;7
+&amp;nbsp;8
+&amp;nbsp;9
+10
+11
+12
+13&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;class &lt;/span&gt;&lt;span class=&quot;class&quot;&gt;Object&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;old_is_a?&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;is_a?&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;klass&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;klass&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Thing&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;respond_to?&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;symbol&quot;&gt;:that_swing&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;old_is_a?&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;klass&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;constant&quot;&gt;Thing&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;times&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;doo_wah&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Answer after the jump.&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;&quot;It Don't Mean A Thing (If It Ain't Got That Swing)&quot; by Duke Ellington and Ella Fitzgerald&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;It don't mean a thing if it ain't got that swing,
+doo-wah, doo-wah, doo-wah, doo-wah, doo-wah, doo-wah, doo-wah, doo-wah
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Name That Code</title>
+    <link href="http://calamitylane.com/blog/Name-That-Code/"/>
+    <updated>2008-09-16T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/Name-That-Code</id>
+    <content type="html">&lt;div class=&quot;ruby&quot;&gt;&lt;pre style=&quot;overflow: hidden;&quot;&gt;&lt;code class=&quot;line_number&quot; style=&quot;float: left; margin-right: 1em&quot;&gt;1
+2
+3
+4
+5
+6&lt;/code&gt;&lt;code&gt;&lt;span class=&quot;keyword&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;method&quot;&gt;hi!&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;what&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;who&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;string&quot;&gt;Slim Shady&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;'&lt;/span&gt;
+
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;constant&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;punct&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ident&quot;&gt;what&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ident&quot;&gt;who&lt;/span&gt;&lt;span class=&quot;punct&quot;&gt;]&lt;/span&gt;
+&amp;nbsp;&amp;nbsp;&lt;span class=&quot;ident&quot;&gt;jigga_jigga&lt;/span&gt;
+&lt;span class=&quot;keyword&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As before, answer after the jump...&lt;/p&gt;
+
+&lt;!-- read more --&gt;
+
+
+&lt;p&gt;&quot;My Name Is...&quot; by Eminem&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Hi! My name is.. (what?) My name is.. (who?)
+My name is.. [scratches] Slim Shady
+Hi! My name is.. (huh?) My name is.. (what?)
+My name is.. [scratches] Slim Shady
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>RSS Has been de-b0rked</title>
+    <link href="http://calamitylane.com/blog/RSS-Has-been-de-b0rked/"/>
+    <updated>2008-09-13T00:00:00-05:00</updated>
+    <id>http://calamitylane.com/blog/RSS-Has-been-de-b0rked</id>
+    <content type="html">&lt;p&gt;Apologies to anyone who's tried to use the RSS feeds.  They should be fixed now.&lt;/p&gt;
+</content>
+  </entry>
+  
+</feed>

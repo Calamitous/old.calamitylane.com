@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Calamity Lane: Multi-line strings in Ruby-- I Love Carriage Returns!</title>
+  <meta name="author" content="Eric Budd">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://calamitylane.com/blog/Multi-line-strings-in-Ruby-I-Love-Carriage-Returns/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Calamity Lane" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Calamity Lane</a></h1>
+  
+    <h2>Curious Code for Curious Coders</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:calamitylane.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Multi-line Strings in Ruby&#8211; I Love Carriage Returns!</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-09 00:00:00 -0500" pubdate  updated >Apr 9<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>If you&#8217;ve ever done any serious development in VB or the old VBScript, you&#8217;ve probably done something like this:</p>
+
+<pre><code>strSQL = "SELECT o.* " &amp; _
+         "FROM people p " &amp; _
+         "INNER JOIN orders o " &amp; _
+         "ON o.person_id = p.id " &amp; _
+         "WHERE person_id = " &amp; PersonID &amp; ";"
+</code></pre>
+
+<!-- read more -->
+
+
+<p>&#8230;which is highly readable, but a huge pain to debug, especially when trying to cut-n-paste into the query window. How many of us have learned BkSp-BkSp-BkSp-Down-End-repeat-ad-infinitum? In fact, if you were to take every &#8216;&#8221; &amp; _&#8217; and &#8217; &#8220;&#8217; I&#8217;ve ever deleted and stack them up on top of one another, you would probably end up with a stack&#8230; well, several inches high. Let&#8217;s face it, electrons just aren&#8217;t that big.</p>
+
+<p>Fed up with this state of affairs, many of us moved to C# for development, leading to:</p>
+
+<pre><code>strSQL =          "SELECT o.* ";
+strSQL = strSQL + "FROM people p ";
+strSQL = strSQL + "INNER JOIN orders o ";
+strSQL = strSQL + "  ON o.person_id = p.id ";
+strSQL = strSQL + "WHERE person_id = " + PersonID.ToString() + ";
+</code></pre>
+
+<p>In the computer industry, this is called &#8220;progress.&#8221;</p>
+
+<p>Of course, if you wanted to make debugging simpler, you could stuff the entire string on one line:</p>
+
+<pre><code>strSQL = "SELECT o.* FROM people p INNER JOIN orders o ON o.person_id = p.id WHERE person_id = " + PersonID.ToString() + ";"
+</code></pre>
+
+<p>&#8230;which is a lot easier to cut-n-paste, but a lot less easy to read.</p>
+
+<p>Which is where Ruby comes in. Same query in Ruby:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1
+2
+3
+4
+5
+6</code><code><span class="ident">strSQL</span> <span class="punct">=</span> <span class="punct">&quot;</span><span class="string">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SELECT o.*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FROM people p
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INNER JOIN orders o ON o.person_id = p.id
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE person_id = <span class="expr">#{person_id.to_s}</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="punct">&quot;</span>
+</code></pre></div>
+
+
+<p>Isn&#8217;t it bee-yoo-tee-ful? Readable, functional, and oh so copy-pasteable. Also, it does not require extra punctuation to patch together a simple multi-line query.</p>
+
+<p>There are about 19,000 different ways to define a string in Ruby, but it&#8217;s the simple timesavers like this that make the language really shine.</p>
+
+<p>Of course, if you were using Rails, you could just</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="constant">Person</span><span class="punct">.</span><span class="ident">find</span><span class="punct">(</span><span class="ident">person_id</span><span class="punct">).</span><span class="ident">orders</span>
+</code></pre></div>
+
+
+<p>&#8230;which just goes to show how much smarter and more sexually attractive Railers are than everybody else.</p>
+
+<p>NOTE: Originally, I was going to include connection and execution of the query, but that would have blown the VBScript and Ruby examples up an extra four lines of code each. Using recommended practices, it would have bloated the C# code up another 15 lines, plus a stored procedure definition.</p>
+
+<p>The Rails example would still have been only one line. Simplicity ftw!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Budd</span></span>
+
+      
+
+
+
+
+<time datetime="2007-04-09 00:00:00 -0500" pubdate  updated >Apr 9<span>th</span>, 2007</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'calamitylane';
+  var disqus_identifier = 'http://calamitylane.com/blog/Multi-line-strings-in-Ruby-I-Love-Carriage-Returns/';
+  var disqus_url = 'http://calamitylane.com/blog/Multi-line-strings-in-Ruby-I-Love-Carriage-Returns/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/Hidden-Chrome-Features-on-CR-48/">Hidden Chrome Features on CR-48</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Chrome OS on the CR-48: It Has Developer Bits!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Name-The-Next-Budd/">Name The Next Budd</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Zombie-Songs/">Zombie Songs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/A-More-Effective-Name/">A More Effective Name</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Eric Budd -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

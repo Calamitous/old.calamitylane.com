@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Calamity Lane: More GServer Goodness</title>
+  <meta name="author" content="Eric Budd">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://calamitylane.com/blog/More-GServer-Goodness/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Calamity Lane" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Calamity Lane</a></h1>
+  
+    <h2>Curious Code for Curious Coders</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:calamitylane.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">More GServer Goodness</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2007-04-15 00:00:00 -0500" pubdate  updated >Apr 15<span>th</span>, 2007</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In a <a href="/articles/programming/rails-telnet-server">previous posting</a>, I demonstrated how to create a telnet server from a Rails application.  After having actually used GServer in anger, I can add a few notes to it:</p>
+
+<h4>ACCESSING YOUR SERVER REMOTELY</h4>
+
+<!-- read more -->
+
+
+<p>This one took way too long to figure out.  Every example I&#8217;ve seen online (<a href="http://www.ruby-doc.org/stdlib/libdoc/gserver/rdoc/index.html">even the library documentation</a>) will only let you connect from localhost, which seemed even more exceptionally pointless than the stuff I usually do.  Most of the sample code runs along these lines:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1
+2
+3
+4
+5
+6
+7
+8
+9</code><code><span class="ident">require</span> <span class="punct">'</span><span class="string">gserver</span><span class="punct">'</span>
+
+<span class="keyword">class </span><span class="class">SomeNewServer</span> <span class="punct">&lt;</span> <span class="constant">GServer</span>
+&nbsp;&nbsp;<span class="punct">...</span>
+<span class="keyword">end</span>
+
+<span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+<span class="ident">server</span><span class="punct">.</span><span class="ident">start</span>
+<span class="ident">server</span><span class="punct">.</span><span class="ident">join</span>
+</code></pre></div>
+
+
+<p>&#8230;where &#8220;1234&#8221; is the port used to access the server.  With this setup, you simply cannot access the server from another box, period.  Change the following line:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span>
+</code></pre></div>
+
+
+<p>&#8230;to:</p>
+
+<div class="ruby"><pre style="overflow: hidden;"><code class="line_number" style="float: left; margin-right: 1em">1</code><code><span class="ident">server</span> <span class="punct">=</span> <span class="constant">SomeNewServer</span><span class="punct">.</span><span class="ident">new</span> <span class="number">1234</span><span class="punct">,</span> <span class="punct">'</span><span class="string">myserver.example.com</span><span class="punct">'</span>
+</code></pre></div>
+
+
+<p>&#8230;to make your new server accessible to the outside world.  You can use an IP address in place of the domain name.</p>
+
+<p>On the one hand, I was able to just guess at this parameter, and Ruby&#8217;s Principle of Least Surprise came through for me.  It&#8217;s more secure, as you don&#8217;t have to worry about accidentally exposing a massive security hole on your box during development.   On the other hand, it would have been nice to have it clearly listed out somewhere.  Here&#8217;s hoping that this saves some future googler a guessing game.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Eric Budd</span></span>
+
+      
+
+
+
+
+<time datetime="2007-04-15 00:00:00 -0500" pubdate  updated >Apr 15<span>th</span>, 2007</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'calamitylane';
+  var disqus_identifier = 'http://calamitylane.com/blog/More-GServer-Goodness/';
+  var disqus_url = 'http://calamitylane.com/blog/More-GServer-Goodness/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/Hidden-Chrome-Features-on-CR-48/">Hidden Chrome Features on CR-48</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Chrome-OS-on-the-CR-48-It-Has-Developer-Bits/">Chrome OS on the CR-48: It Has Developer Bits!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Name-The-Next-Budd/">Name The Next Budd</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/Zombie-Songs/">Zombie Songs</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/A-More-Effective-Name/">A More Effective Name</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Eric Budd -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

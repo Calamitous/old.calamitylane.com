@@ -10,9 +10,9 @@ simple_search: http://google.com/search
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
-#subscribe_email:
-#RSS feeds can list your email address if you like
-#email:
+subscribe_email:
+# RSS feeds can list your email address if you like
+email:
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -46,14 +46,6 @@ default_asides: [asides/recent_posts.html]
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
-
-# Twitter
-#twitter_user:
-#twitter_tweet_count: 4
-#twitter_show_replies: false
-#twitter_follow_button: true
-#twitter_show_follower_count: false
-#twitter_tweet_button: true
 
 # Google Plus
 google_plus_one: true

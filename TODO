@@ -9,3 +9,6 @@ data:
 
 styling:
   check into google webfonts
+
+deployment:
+  remove disqus_developer = 1

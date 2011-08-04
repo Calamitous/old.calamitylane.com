@@ -45,7 +45,7 @@ published: true
 
 As always, jump for answers!
 
-<!-- read more -->
+<!-- more -->
 
 New Age Girl -- Deadeye Dick
 

@@ -12,7 +12,7 @@ Before last week, I'd never done much more than spin through the initial tutoria
 
 I welcome comments and corrections to my observations, and suggestions for easing some of the new-developer pain.
 
-<!-- read more -->
+<!-- more -->
 # [Merb](http://www.merbivore.com/)
 Having only recently reached 1.0, Merb's still a bit rough around the edges.  Documentation and tutorials are sparse, and there are a few API decisions that feel odd, but all that's to be expected.
 

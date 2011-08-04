@@ -31,7 +31,7 @@ published: true
 <span class="keyword">alias</span> <span class="symbol">:feed</span><span class="punct">,</span> <span class="symbol">:need</span>
 </code></pre></div>
 
-<!-- read more -->
+<!-- more -->
 
 When I'm 64 -- The Beatles
 

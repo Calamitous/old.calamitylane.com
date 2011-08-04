@@ -11,7 +11,7 @@ This is not in the same vein as Djikstra's piece-- he was describing that, by un
 Djikstra's point is that "we the programmer humans" are limited.  My point is "I, the programmer, am human."  How does a humble programmer think and behave, and why is it better to be (and work with) a humble programmer rather than a proud one?
 
 
-<!-- read more -->
+<!-- more -->
 
 1. The Humble Programmer can make mistakes
 2. The Humble Programmer is not the smartest person in the room

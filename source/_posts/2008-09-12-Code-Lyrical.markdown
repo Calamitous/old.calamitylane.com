@@ -15,7 +15,7 @@ published: true
 
 <p>Can you guess the song? :) Answer after the jump.</p>
 
-<!-- read more -->
+<!-- more -->
 
 "Play that Funky Music" by Wild Cherry
 

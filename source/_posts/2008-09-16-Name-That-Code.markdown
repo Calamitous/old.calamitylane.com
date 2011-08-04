@@ -20,7 +20,7 @@ published: true
 
 As before, answer after the jump...
 
-<!-- read more -->
+<!-- more -->
 
 "My Name Is..." by Eminem
 

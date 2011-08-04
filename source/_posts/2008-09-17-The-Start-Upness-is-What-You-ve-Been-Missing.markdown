@@ -6,7 +6,7 @@ published: false
 ---
 After many in the IT industry seeking a job with satisfaction *and* security, I've finally come to the conclusion that you can simply never have both.  In fact, in our employee-hostile industry, the only way you can achieve even a marginal amount of security is by walling off a certain amount of business and systems knowledge, and refusing to share it.
 
-<!-- read more -->
+<!-- more -->
 
 While this is clearly detrimental to the business and a gross violation of professional ethics, it is depressingly common.
 

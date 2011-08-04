@@ -6,7 +6,7 @@ published: true
 ---
 With my recent spate of GServer problems, I thought I'd post something that, surprisingly, turned out not to be much of a problem at all: turning a Ruby GServer into a Windows service.
 
-<!-- read more -->
+<!-- more -->
 
 First, it helps tremendously if you already have Cygwin installed.  If you don't, you should, as you get lots of UNIX-y command-line goodness (for example, a "Find In Files" functionality (grep) that actually finds stuff in files.  Uncanny!)
 

@@ -10,7 +10,7 @@ I'm fortunate enough to have been able to use Rails at work for a few months now
 
 #### How to Turn a Rails Application Into a Telnet Server in 30 Lines of Code!
 
-<!-- read more -->
+<!-- more -->
 
 &nbsp;
 
